@@ -195,6 +195,37 @@ td.num{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:14px}
 .cta p{font-size:17px;color:var(--on-pine-dim);max-width:58ch}
 .cta .note{font-size:14px;color:#A9BBB3;margin-top:20px;max-width:58ch}
 
+/* ---------- Konfigurator ---------- */
+.cfg{display:grid;gap:18px;margin-top:34px}
+.q{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:20px 22px 18px}
+.q legend{padding:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17.5px}
+.qnum{display:block;font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
+  color:var(--brass-ink);margin-bottom:5px}
+.qhint{font-size:14.5px;color:var(--muted);margin:8px 0 15px;max-width:64ch}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;background:var(--paper);cursor:pointer;
+  border:1px solid var(--line);border-left:3px solid transparent;border-radius:3px;padding:11px 14px;
+  transition:border-color .14s,background .14s}
+.opt:hover{border-color:var(--muted)}
+.opt input{margin:4px 0 0;accent-color:var(--pine);flex:0 0 auto}
+.opt b{font-weight:600;font-size:15.5px}
+.opt small{display:block;font-size:13.5px;color:var(--muted);margin-top:1px}
+.opt.on{border-color:var(--line);border-left-color:var(--brass);background:#FDFDFB}
+.opt:focus-within{outline:2px solid var(--brass-ink);outline-offset:2px}
+.cfg-go{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.cfg-go .miss{font-size:14.5px;color:var(--muted)}
+
+.result{border:1px solid var(--line);border-left:4px solid var(--brass);border-radius:var(--r);
+  background:var(--panel);padding:28px 26px;margin-top:34px}
+.result .lbl{font-size:14px;font-weight:600;color:var(--pine);margin-bottom:4px}
+.result .tier{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(25px,3.6vw,33px);color:var(--pine);margin-bottom:12px}
+.result p{max-width:66ch;margin-bottom:14px}
+.result h3{font-size:16px;font-weight:600;margin:22px 0 8px}
+.result ol{margin:0 0 4px 20px;font-size:15.5px;color:var(--muted)}
+.result ol li{margin-bottom:7px}
+.result .warn{border-top:1px solid var(--line);margin-top:22px;padding-top:18px;font-size:15.5px}
+
 /* ---------- Verteiler ---------- */
 .signup{border-top:1px solid var(--line);padding:38px 0 12px}
 .signup h2{font-size:20px;font-weight:600;margin-bottom:8px}

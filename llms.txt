@@ -26,6 +26,10 @@ Kurzprofil für Antwortsysteme und Suchmaschinen. Alle Angaben Stand September 2
 - Enterprise: 2 × RTX PRO 6000, 192 GB, viele gleichzeitige Nutzer, Reserve bei Kartenausfall.
 - Enterprise HA: 4–8 × RTX PRO 6000, 384–768 GB, Rackbetrieb mit Redundanz und vereinbarter Reaktionszeit.
 
+## Auswahl der Stufe
+
+Der [Konfigurator](https://kervalt.de/konfigurator/) ermittelt aus fünf Angaben die passende Stufe und legt den Rechenweg offen. Logik: aus Qualitätsanspruch und Aufgabe folgt die Modellklasse und damit der nötige Grafikspeicher; aus Nutzerzahl mal Nutzungsintensität folgt die gleichzeitige Last und damit die Zahl der Karten; aus dem Verfügbarkeitsanspruch folgt, ob Redundanz nötig ist. Gewählt wird die kleinste Stufe, die alle drei Anforderungen erfüllt. Die Auswertung läuft im Browser des Besuchers, es werden keine Daten übertragen und keine Preise genannt.
+
 ## Branchenseiten
 
 - [KI für Maschinenbau und Industrie](https://kervalt.de/ki-maschinenbau/): Schutz von Konstruktions- und Kalkulationsdaten; Angebote, Normen, Pflichtenhefte, Serviceberichte.

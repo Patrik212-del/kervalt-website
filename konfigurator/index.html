@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Welche Appliance passt? Konfigurator für Ihren KI-Server | Kervalt</title>
+<meta name="description" content="In fünf Fragen zur passenden Appliance: Nutzerzahl, Intensität, Qualitätsanspruch und Verfügbarkeit ergeben die kleinste Maschine, die für Ihren Betrieb reicht. Mit nachvollziehbarer Herleitung.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0E3B32">
+<link rel="canonical" href="https://kervalt.de/konfigurator/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kervalt">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Welche Appliance passt? Konfigurator für Ihren KI-Server">
+<meta property="og:description" content="Fünf Fragen, eine Empfehlung, offengelegte Herleitung. Gewählt wird die kleinste Maschine, die reicht.">
+<meta property="og:url" content="https://kervalt.de/konfigurator/">
+<meta property="og:image" content="https://kervalt.de/assets/og-konfigurator.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://kervalt.de/konfigurator/",
+      "url": "https://kervalt.de/konfigurator/",
+      "name": "Konfigurator für On-Premise-KI-Appliances",
+      "description": "Ermittelt aus Nutzerzahl, Nutzungsintensität, Qualitätsanspruch und Verfügbarkeitsanspruch die passende Appliance-Stufe.",
+      "isPartOf": {"@id": "https://kervalt.de/#website"},
+      "about": {"@id": "https://kervalt.de/#service"},
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://kervalt.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Konfigurator", "item": "https://kervalt.de/konfigurator/"}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="wordmark" href="/"><span class="led" aria-hidden="true"></span>Kervalt</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/ki-maschinenbau/">Maschinenbau</a>
+      <a href="/ki-kanzlei/">Kanzleien</a>
+      <a href="/ki-praxis/">Praxen</a>
+      <a href="/konfigurator/" aria-current="page">Konfigurator</a>
+      <a href="mailto:info@kervalt.de">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <section class="sec wrap" style="padding-bottom:0">
+    <span class="kicker">Konfigurator</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(29px,4.4vw,42px);line-height:1.08;letter-spacing:-.022em;margin-bottom:16px">Welche Maschine reicht für Ihren Betrieb?</h1>
+    <p class="lead" style="max-width:62ch">Fünf Fragen. Danach steht da, welche Stufe passt und woraus sich das ergibt. Der Rechenweg ist offengelegt, damit Sie ihn prüfen können, statt einer Zahl glauben zu müssen.</p>
+    <noscript>
+      <p class="hint" style="margin-top:22px;border-left:3px solid var(--brass);padding-left:14px">Für die Auswertung wird JavaScript gebraucht. Ohne das hilft die <a href="/#appliances">Übersicht der vier Stufen</a> weiter, oder Sie schreiben uns kurz an <a href="mailto:info@kervalt.de">info@kervalt.de</a>, dann klären wir es im Gespräch.</p>
+    </noscript>
+  </section>
+
+  <section class="sec wrap" style="padding-top:30px">
+    <form id="cfg" novalidate>
+      <div class="cfg">
+
+        <fieldset class="q">
+          <legend><span class="qnum">Frage 01</span>Wie viele Menschen würden damit arbeiten?</legend>
+          <p class="qhint">Gemeint sind die Personen, die das System tatsächlich benutzen, nicht die Belegschaft insgesamt.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="users" value="a"><span><b>1 bis 5</b><small>Eine Handvoll Leute, oft eine einzelne Abteilung</small></span></label>
+            <label class="opt"><input type="radio" name="users" value="b"><span><b>6 bis 20</b><small>Ein Team oder mehrere kleine Abteilungen</small></span></label>
+            <label class="opt"><input type="radio" name="users" value="c"><span><b>21 bis 60</b><small>Ein größerer Teil des Betriebs</small></span></label>
+            <label class="opt"><input type="radio" name="users" value="d"><span><b>Mehr als 60</b><small>Betriebsweiter Einsatz</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="qnum">Frage 02</span>Wie oft würde jemand das System benutzen?</legend>
+          <p class="qhint">Daraus ergibt sich, wie viele Anfragen gleichzeitig auflaufen. Das bestimmt die Zahl der Grafikkarten stärker als die Nutzerzahl allein.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="intens" value="a"><span><b>Gelegentlich</b><small>Ein paar Mal am Tag, wenn gerade etwas ansteht</small></span></label>
+            <label class="opt"><input type="radio" name="intens" value="b"><span><b>Regelmäßig</b><small>Mehrmals pro Stunde, fester Teil einzelner Aufgaben</small></span></label>
+            <label class="opt"><input type="radio" name="intens" value="c"><span><b>Dauerhaft</b><small>Läuft im Arbeitsablauf ständig mit</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="qnum">Frage 03</span>Wie gut müssen die Antworten sein?</legend>
+          <p class="qhint">Die ehrliche Antwort ist selten „so gut wie möglich“. Ein größeres Modell kostet Grafikspeicher und damit Geld, das sich nur lohnt, wenn die Aufgabe es verlangt.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="qual" value="a"><span><b>Solide Hilfe</b><small>Zusammenfassen, umformulieren, sortieren. Nacharbeit ist eingeplant</small></span></label>
+            <label class="opt"><input type="radio" name="qual" value="b"><span><b>Fachlich belastbar</b><small>Fachtexte, verlässliche Quellenangabe, wenig Nacharbeit</small></span></label>
+            <label class="opt"><input type="radio" name="qual" value="c"><span><b>Anspruchsvoll</b><small>Schwierige Fachsprache, mehrsprachig, hohe Genauigkeit</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="qnum">Frage 04</span>Was soll das System hauptsächlich tun?</legend>
+          <p class="qhint">Mehrere Aufgabenarten gleichzeitig heißt oft, dass mehr als ein Modell im Speicher liegen muss.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="zweck" value="rag"><span><b>Fragen an die eigenen Dokumente</b><small>Der häufigste Fall: suchen und mit Fundstelle antworten</small></span></label>
+            <label class="opt"><input type="radio" name="zweck" value="text"><span><b>Texte und Entwürfe schreiben</b><small>Angebote, Briefe, Berichte, Übersetzungen</small></span></label>
+            <label class="opt"><input type="radio" name="zweck" value="extrakt"><span><b>Formulare und Belege auslesen</b><small>Rechnungen, Protokolle, Bögen strukturiert erfassen</small></span></label>
+            <label class="opt"><input type="radio" name="zweck" value="mix"><span><b>Mehreres davon parallel</b><small>Verschiedene Abteilungen mit verschiedenen Aufgaben</small></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q">
+          <legend><span class="qnum">Frage 05</span>Was passiert, wenn die Maschine ausfällt?</legend>
+          <p class="qhint">Redundanz kostet eine zweite Karte. Sie lohnt sich nur, wenn Stillstand teurer ist als das Ersatzteil.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="avail" value="a"><span><b>Wäre verschmerzbar</b><small>Ein paar Tage ohne das System sind unangenehm, aber machbar</small></span></label>
+            <label class="opt"><input type="radio" name="avail" value="b"><span><b>Sollte schnell wieder laufen</b><small>Am nächsten Werktag wieder verfügbar, sonst wird es eng</small></span></label>
+            <label class="opt"><input type="radio" name="avail" value="c"><span><b>Darf nicht stillstehen</b><small>Stillstand kostet sofort Geld oder blockiert Abläufe</small></span></label>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="cfg-go">
+        <button class="btn btn-primary" type="submit">Empfehlung anzeigen</button>
+        <span class="miss" id="cfg-miss"></span>
+      </div>
+    </form>
+
+    <div id="cfg-result" hidden aria-live="polite"></div>
+  </section>
+
+  <section class="sec wrap">
+    <h2>Wie diese Empfehlung zustande kommt.</h2>
+    <p class="sub">Damit klar ist, was der Konfigurator kann und was nicht.</p>
+    <div class="split">
+      <div>
+        <h3>Was hier gerechnet wird</h3>
+        <ul>
+          <li>Aus Qualitätsanspruch und Aufgabe ergibt sich die <span class="amount">Modellklasse</span> und damit der nötige Grafikspeicher</li>
+          <li>Aus Nutzerzahl mal Intensität ergibt sich die gleichzeitige Last und damit die Zahl der Karten</li>
+          <li>Aus dem Verfügbarkeitsanspruch ergibt sich, ob Redundanz nötig ist</li>
+          <li>Gewählt wird die <span class="amount">kleinste</span> Stufe, die alle drei Anforderungen erfüllt</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Was hier nicht passiert</h3>
+        <ul>
+          <li>Es wird kein Preis genannt. GPU-Preise schwanken derzeit wöchentlich, eine Zahl auf dieser Seite wäre morgen falsch</li>
+          <li>Es werden keine Daten übertragen. Die Auswertung läuft in Ihrem Browser, wir erfahren davon nichts</li>
+          <li>Es ersetzt kein Gespräch. Vier Stufen bilden nicht jeden Sonderfall ab</li>
+          <li>Angebote halten wir <span class="amount">14 Tage</span> gültig, aus demselben Grund</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <nav aria-label="Fußzeile">
+      <a href="/">Start</a>
+      <a href="/ki-maschinenbau/">Maschinenbau</a>
+      <a href="/ki-kanzlei/">Kanzleien</a>
+      <a href="/ki-praxis/">Praxen und MVZ</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p>Kervalt, Patrik Kaiser. On-Premise-KI-Server für den Mittelstand. Chiemseestraße 25b, 83278 Traunstein. <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var USERS = {
+    a: { w: 1, label: "1 bis 5 Personen" },
+    b: { w: 2, label: "6 bis 20 Personen" },
+    c: { w: 3, label: "21 bis 60 Personen" },
+    d: { w: 4, label: "mehr als 60 Personen" }
+  };
+  var INTENS = {
+    a: { w: 1, label: "gelegentlich" },
+    b: { w: 2, label: "regelmäßig" },
+    c: { w: 3, label: "dauerhaft" }
+  };
+  var QUAL = {
+    a: { tier: 0, label: "solide Hilfe", modell: "kompakte Modelle mit 7 bis 14 Milliarden Parametern", vram: "32 GB" },
+    b: { tier: 1, label: "fachlich belastbar", modell: "Modelle bis etwa 40 bis 70 Milliarden Parameter", vram: "96 GB" },
+    c: { tier: 2, label: "anspruchsvoll", modell: "Modelle ab 70 Milliarden Parametern", vram: "192 GB" }
+  };
+  var ZWECK = {
+    rag: { bump: 0, label: "Fragen an die eigenen Dokumente" },
+    text: { bump: 0, label: "Texte und Entwürfe schreiben" },
+    extrakt: { bump: 0, label: "Formulare und Belege auslesen" },
+    mix: { bump: 1, label: "mehreres davon parallel" }
+  };
+  var AVAIL = {
+    a: { min: 0, label: "Ausfall wäre verschmerzbar" },
+    b: { min: 1, label: "sollte am nächsten Werktag wieder laufen" },
+    c: { min: 2, label: "darf nicht stillstehen" }
+  };
+
+  var TIERS = [
+    { name: "Kompakt", gpu: "1 × RTX 5090", vram: "32 GB", klasse: "7–14 B", karten: "eine Karte" },
+    { name: "Professional", gpu: "1 × RTX PRO 6000 Blackwell", vram: "96 GB", klasse: "bis 40–70 B", karten: "eine Karte" },
+    { name: "Enterprise", gpu: "2 × RTX PRO 6000", vram: "192 GB", klasse: "70 B und größer", karten: "zwei Karten" },
+    { name: "Enterprise HA", gpu: "4–8 × RTX PRO 6000", vram: "384–768 GB", klasse: "mehrere Modelle parallel", karten: "Rack mit Redundanz" }
+  ];
+
+  var form = document.getElementById("cfg");
+  var out = document.getElementById("cfg-result");
+  var miss = document.getElementById("cfg-miss");
+  var FIELDS = ["users", "intens", "qual", "zweck", "avail"];
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  function mark() {
+    var opts = form.querySelectorAll(".opt");
+    for (var i = 0; i < opts.length; i++) {
+      var input = opts[i].querySelector("input");
+      opts[i].classList.toggle("on", input.checked);
+    }
+  }
+
+  function answers() {
+    var a = {};
+    for (var i = 0; i < FIELDS.length; i++) {
+      var el = form.querySelector('input[name="' + FIELDS[i] + '"]:checked');
+      if (!el) return null;
+      a[FIELDS[i]] = el.value;
+    }
+    return a;
+  }
+
+  function compute(a) {
+    var users = USERS[a.users], intens = INTENS[a.intens];
+    var qual = QUAL[a.qual], zweck = ZWECK[a.zweck], avail = AVAIL[a.avail];
+
+    var last = users.w * intens.w;
+    var lastBump = last >= 10 ? 2 : last >= 5 ? 1 : 0;
+    var roh = qual.tier + lastBump + zweck.bump;
+    var idx = Math.min(3, Math.max(roh, avail.min));
+
+    var schritte = [];
+    schritte.push("Anspruch <b>" + esc(qual.label) + "</b> führt auf " + esc(qual.modell) +
+      ". Dafür sind mindestens <b>" + esc(qual.vram) + "</b> Grafikspeicher nötig, also mindestens Stufe " +
+      esc(TIERS[qual.tier].name) + ".");
+    if (lastBump === 0) {
+      schritte.push("<b>" + esc(users.label) + "</b> bei <b>" + esc(intens.label) +
+        "</b>er Nutzung ergibt eine Last, die eine einzelne Karte gut wegsteckt. Kein Aufschlag.");
+    } else {
+      schritte.push("<b>" + esc(users.label) + "</b> bei <b>" + esc(intens.label) +
+        "</b>er Nutzung lässt genug Anfragen gleichzeitig auflaufen, dass eine Karte zur Bremse wird. Das hebt die Stufe um " +
+        (lastBump === 2 ? "zwei Schritte" : "einen Schritt") + ".");
+    }
+    if (zweck.bump) {
+      schritte.push("Weil <b>" + esc(zweck.label) + "</b> laufen soll, müssen mehrere Modelle gleichzeitig im Speicher liegen. Das hebt die Stufe um einen weiteren Schritt.");
+    } else {
+      schritte.push("Der Schwerpunkt <b>" + esc(zweck.label) + "</b> kommt mit einem Modell aus und ändert die Stufe nicht.");
+    }
+    if (avail.min > roh) {
+      schritte.push("Weil das System <b>" + esc(avail.label) +
+        "</b>, reicht eine einzelne Karte nicht: Bei einem Defekt stünde alles. Das hebt die Stufe auf " +
+        esc(TIERS[avail.min].name) + ".");
+    } else if (a.avail === "c") {
+      schritte.push("Der Anspruch <b>" + esc(avail.label) + "</b> ist mit " + esc(TIERS[idx].karten) + " bereits abgedeckt.");
+    } else {
+      schritte.push("Beim Verfügbarkeitsanspruch <b>" + esc(avail.label) + "</b> ist keine Redundanz nötig. Es bleibt bei der Stufe aus den Punkten davor.");
+    }
+    if (roh > 3) {
+      schritte.push("Rechnerisch läge das noch darüber. Oberhalb von Enterprise HA wird nicht mehr gestapelt, sondern einzeln ausgelegt.");
+    }
+
+    var zweifel = last <= 2 && a.qual === "a" && a.avail === "a";
+    return { idx: idx, tier: TIERS[idx], schritte: schritte, zweifel: zweifel, last: last };
+  }
+
+  function mailto(a, r) {
+    var body =
+      "Guten Tag,\n\nwir haben den Konfigurator auf kervalt.de benutzt und hätten gern ein Angebot.\n\n" +
+      "Empfehlung: " + r.tier.name + " (" + r.tier.gpu + ", " + r.tier.vram + ")\n\n" +
+      "Unsere Angaben:\n" +
+      "- Nutzer: " + USERS[a.users].label + "\n" +
+      "- Nutzung: " + INTENS[a.intens].label + "\n" +
+      "- Qualitätsanspruch: " + QUAL[a.qual].label + "\n" +
+      "- Schwerpunkt: " + ZWECK[a.zweck].label + "\n" +
+      "- Verfügbarkeit: " + AVAIL[a.avail].label + "\n\n" +
+      "Betrieb: \nAnsprechpartner: \nTelefon: \n\nViele Grüße\n";
+    return "mailto:info@kervalt.de?subject=" +
+      encodeURIComponent("Angebotsanfrage " + r.tier.name) +
+      "&body=" + encodeURIComponent(body);
+  }
+
+  function render(a) {
+    var r = compute(a);
+    var li = r.schritte.map(function (s) { return "<li>" + s + "</li>"; }).join("");
+
+    var html =
+      '<div class="result">' +
+        '<div class="lbl">Die kleinste Stufe, die für Sie reicht</div>' +
+        '<div class="tier">' + esc(r.tier.name) + "</div>" +
+        '<div class="duo">' +
+          "<div>" +
+            "<p>Diese Stufe erfüllt alle fünf Angaben, ohne dass Sie Reserve bezahlen, die niemand nutzt. Wenn Ihnen ein Punkt unrealistisch vorkommt, ändern Sie ihn oben und sehen sofort, was sich verschiebt.</p>" +
+            "<h3>Wie sich das ergibt</h3>" +
+            "<ol>" + li + "</ol>" +
+          "</div>" +
+          '<aside class="plate" aria-label="Eckdaten der Empfehlung">' +
+            '<div class="plate-hd"><span class="led" aria-hidden="true"></span>' + esc(r.tier.name) + "</div>" +
+            "<dl>" +
+              '<div class="row"><dt>Grafikkarten</dt><dd>' + esc(r.tier.gpu) + "</dd></div>" +
+              '<div class="row"><dt>Speicher</dt><dd>' + esc(r.tier.vram) + "</dd></div>" +
+              '<div class="row"><dt>Modellklasse</dt><dd>' + esc(r.tier.klasse) + "</dd></div>" +
+              '<div class="row"><dt>Aufbau</dt><dd>2–4 Tage</dd></div>' +
+              '<div class="row"><dt>Wartung</dt><dd>monatlich</dd></div>' +
+            "</dl>" +
+          "</aside>" +
+        "</div>" +
+        (r.zweifel
+          ? '<div class="warn"><b>Ehrlich gesagt:</b> Bei dieser Nutzung lohnt sich eine eigene Maschine oft nicht. Wenige Personen, gelegentlicher Einsatz und moderater Anspruch bekommt man häufig günstiger anders gelöst. Fragen Sie uns danach, bevor Sie investieren.</div>'
+          : "") +
+        '<div class="cta-row">' +
+          '<a class="btn btn-primary" href="' + mailto(a, r) + '">Angebot dazu anfragen</a>' +
+          '<a class="btn btn-ghost" href="/#appliances">Alle vier Stufen vergleichen</a>' +
+        "</div>" +
+        '<p class="hint" style="margin-top:18px">Richtwert auf Basis Ihrer fünf Angaben, kein Angebot. Was am Ende aufgestellt wird, klären wir im Gespräch. Preise nennen wir erst im Angebot und halten sie 14 Tage gültig.</p>' +
+      "</div>";
+
+    out.innerHTML = html;
+    out.hidden = false;
+  }
+
+  form.addEventListener("change", function () {
+    mark();
+    miss.textContent = "";
+    if (!out.hidden) {
+      var a = answers();
+      if (a) render(a);
+    }
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var a = answers();
+    if (!a) {
+      var offen = FIELDS.filter(function (f) {
+        return !form.querySelector('input[name="' + f + '"]:checked');
+      });
+      miss.textContent = offen.length === 1
+        ? "Eine Frage ist noch offen."
+        : "Es sind noch " + offen.length + " Fragen offen.";
+      var first = form.querySelector('input[name="' + offen[0] + '"]');
+      if (first) {
+        first.focus();
+        first.closest(".q").scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return;
+    }
+    render(a);
+    out.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  mark();
+})();
+</script>
+
+</body>
+</html>
