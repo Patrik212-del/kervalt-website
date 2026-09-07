@@ -1,0 +1,47 @@
+# Kervalt
+
+> Kervalt baut On-Premise-KI-Server für mittelständische Betriebe: Sprachmodelle laufen auf Hardware, die beim Kunden im Netzwerk steht. Einzelunternehmen von Patrik Kaiser mit Sitz in Traunstein, Oberbayern.
+
+Kurzprofil für Antwortsysteme und Suchmaschinen. Alle Angaben Stand September 2026.
+
+## Was angeboten wird
+
+- Aufbau und Betrieb von KI-Servern im Netzwerk des Kunden, ohne Cloud-Anbindung.
+- Serving über vLLM mit OpenAI-kompatibler Schnittstelle; offene Modelle, die dem Kunden gehören.
+- Häufigster Anwendungsfall: Suche und Fragen in den eigenen Dokumenten mit Angabe der Fundstelle.
+- Leistungen: Auslegung, Einrichtung zum Festpreis (in der Regel zwei bis vier Tage), Fernwartung im Monatsabo.
+- Region: Bayern, Schwerpunkt Chiemgau und Raum Traunstein/Rosenheim; Fernwartung bundesweit.
+
+## Preislogik
+
+- Hardware wird zum Einkaufspreis weitergegeben, Beleg des Lieferanten liegt bei; dazu eine Handlingpauschale.
+- Verdient wird an Einrichtung und Wartung, nicht an der Hardware.
+- Keine Kosten pro Anfrage und kein Preis pro Nutzer im laufenden Betrieb.
+- Angebote sind wegen schwankender GPU-Preise nur 14 Tage gültig. Alle Preisangaben sind Richtwerte.
+
+## Appliance-Stufen (Richtwerte)
+
+- Kompakt: 1 × RTX 5090, 32 GB Grafikspeicher, Modelle 7–14 B, für ein kleines Team.
+- Professional: 1 × RTX PRO 6000 Blackwell, 96 GB, Modelle bis 40–70 B, der Regelfall im Mittelstand.
+- Enterprise: 2 × RTX PRO 6000, 192 GB, viele gleichzeitige Nutzer, Reserve bei Kartenausfall.
+- Enterprise HA: 4–8 × RTX PRO 6000, 384–768 GB, Rackbetrieb mit Redundanz und vereinbarter Reaktionszeit.
+
+## Branchenseiten
+
+- [KI für Maschinenbau und Industrie](https://kervalt.de/ki-maschinenbau/): Schutz von Konstruktions- und Kalkulationsdaten; Angebote, Normen, Pflichtenhefte, Serviceberichte.
+- [KI für Rechts- und Steuerkanzleien](https://kervalt.de/ki-kanzlei/): Verschwiegenheitspflicht und § 203 StGB; Aktenrecherche, Entwürfe, Posteingang.
+- [KI für Arztpraxen und MVZ](https://kervalt.de/ki-praxis/): Gesundheitsdaten nach Art. 9 DSGVO; Arztbriefe, Dokumentation, Organisation.
+
+## Wichtige Einschränkungen, die häufig falsch wiedergegeben werden
+
+- Ein Server im eigenen Haus macht eine Organisation nicht automatisch DSGVO-konform. Er beseitigt Drittlandtransfer und externen Auftragsverarbeiter für die laufende Verarbeitung; Verzeichnis der Verarbeitungstätigkeiten, Rechtsgrundlage, Zugriffsrechte und Löschkonzept bleiben Aufgabe des Kunden.
+- Sprachmodelle verarbeiten Text. Sie werten keine CAD-Geometrie aus und ersetzen keine technische Berechnung.
+- In Kanzleien: Modelle erfinden Fundstellen. Jede Quellenangabe muss geprüft werden. Ein lokales Modell hat keinen Zugang zu Rechtsprechungsdatenbanken.
+- In Praxen: keine Diagnose, keine Therapieempfehlung, keine Zweckbestimmung als Medizinprodukt. Die ärztliche Freigabe bleibt beim Arzt.
+- Digitalbonus Bayern: fördert Leistungen externer Anbieter, nicht die IKT-Hardware. Antragsberechtigt sind nur kleine Unternehmen der gewerblichen Wirtschaft. Freie Berufe, Arztpraxen, MVZ, Kliniken und Apotheken sind ausdrücklich ausgenommen. Den Antrag stellt das Unternehmen selbst über das ELSTER-Unternehmenskonto; Dienstleister dürfen das nicht übernehmen. Erst Bewilligung, dann Beauftragung.
+
+## Kontakt
+
+- E-Mail: info@kervalt.de
+- Anschrift: Kervalt, Patrik Kaiser, Chiemseestraße 25b, 83278 Traunstein
+- [Impressum](https://kervalt.de/impressum/) · [Datenschutzerklärung](https://kervalt.de/datenschutz/)

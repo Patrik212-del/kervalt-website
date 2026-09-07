@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kervalt.de/sitemap.xml

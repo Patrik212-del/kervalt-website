@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kervalt.de/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kervalt.de/ki-maschinenbau/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kervalt.de/ki-kanzlei/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kervalt.de/ki-praxis/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kervalt.de/impressum/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://kervalt.de/datenschutz/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <priority>0.2</priority>
+  </url>
+</urlset>

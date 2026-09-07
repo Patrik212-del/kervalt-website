@@ -1,341 +1,418 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kervalt — Software &amp; digitale Produkte</title>
-<meta name="description" content="Kervalt entwickelt Software, mobile Anwendungen und digitale Produkte — Automatisierung, digitale Medieninhalte und Online-Marketing.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KI-Server für den Mittelstand, aufgestellt im eigenen Haus | Kervalt</title>
+<meta name="description" content="Kervalt baut On-Premise-KI-Server für mittelständische Betriebe in Bayern: lokale Sprachmodelle auf Ihrer eigenen Hardware, DSGVO-konform, ohne Cloud. Einrichtung, Betrieb und Wartung aus einer Hand.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0E3B32">
 <link rel="canonical" href="https://kervalt.de/">
-<meta property="og:title" content="Kervalt — Software &amp; digitale Produkte">
-<meta property="og:description" content="Software, mobile Anwendungen und digitale Produkte — Automatisierung, digitale Medieninhalte und Online-Marketing.">
-<meta property="og:url" content="https://kervalt.de/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0d10'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,sans-serif' font-size='38' font-weight='700' fill='%23c9a24b' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
-<style>
-  :root {
-    --bg: #0b0d10;
-    --bg-soft: #12151a;
-    --card: #161a20;
-    --line: #262c35;
-    --text: #e8eaed;
-    --muted: #9aa3ad;
-    --accent: #c9a24b;
-    --accent-soft: rgba(201, 162, 75, 0.12);
-    --radius: 14px;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+<meta property="og:site_name" content="Kervalt">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="KI-Server für den Mittelstand, aufgestellt im eigenen Haus">
+<meta property="og:description" content="Lokale Sprachmodelle auf Ihrer eigenen Hardware. Keine Cloud, kein Drittlandtransfer. Einrichtung, Betrieb und Wartung aus einer Hand.">
+<meta property="og:url" content="https://kervalt.de/">
+<meta property="og:image" content="https://kervalt.de/assets/og-start.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: rgba(11, 13, 16, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
-  .brand {
-    font-size: 1.15rem; font-weight: 700; letter-spacing: 0.22em;
-    color: var(--text); text-transform: uppercase;
-  }
-  .brand:hover { text-decoration: none; }
-  .brand .dot { color: var(--accent); }
-  .tabs { display: flex; gap: 4px; }
-  .tab {
-    padding: 8px 16px; border-radius: 8px;
-    color: var(--muted); font-size: 0.95rem; cursor: pointer;
-    border: none; background: none; font-family: inherit;
-    transition: color 0.15s, background 0.15s;
-  }
-  .tab:hover { color: var(--text); text-decoration: none; }
-
-  .view { display: none; }
-  .view.active { display: block; animation: fadeIn 0.25s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-
-  .hero { padding: 96px 0 64px; text-align: center; }
-  .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
-    letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800;
-  }
-  .hero h1 .dot { color: var(--accent); }
-  .hero .tagline {
-    margin-top: 14px; font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-    color: var(--muted);
-  }
-  .hero .intro {
-    margin: 28px auto 0; max-width: 620px; color: var(--muted);
-    font-size: 1rem;
-  }
-
-  .fields { padding: 24px 0 64px; }
-  .fields-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 14px;
-  }
-  .field {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 20px 22px;
-    transition: border-color 0.2s;
-  }
-  .field:hover { border-color: var(--accent); }
-  .field h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
-  .field h3::before { content: "■"; color: var(--accent); font-size: 0.6rem; vertical-align: 2px; margin-right: 10px; }
-  .field p { color: var(--muted); font-size: 0.9rem; }
-
-  .signup {
-    margin: 0 0 96px;
-    background: linear-gradient(180deg, var(--bg-soft), var(--card));
-    border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 44px 32px; text-align: center;
-  }
-  .signup h2 { font-size: 1.5rem; margin-bottom: 10px; }
-  .signup p { color: var(--muted); max-width: 480px; margin: 0 auto 24px; font-size: 0.95rem; }
-  .signup form {
-    display: flex; gap: 10px; max-width: 460px; margin: 0 auto;
-    flex-wrap: wrap; justify-content: center;
-  }
-  .signup .hp { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
-  .signup input[type="email"] {
-    flex: 1 1 260px; padding: 13px 16px;
-    background: var(--bg); color: var(--text);
-    border: 1px solid var(--line); border-radius: 10px;
-    font-size: 1rem; font-family: inherit; outline: none;
-    transition: border-color 0.15s;
-  }
-  .signup input[type="email"]:focus { border-color: var(--accent); }
-  .signup button {
-    padding: 13px 26px; border: none; border-radius: 10px;
-    background: var(--accent); color: #14100a;
-    font-size: 1rem; font-weight: 600; font-family: inherit; cursor: pointer;
-    transition: filter 0.15s;
-  }
-  .signup button:hover { filter: brightness(1.1); }
-  .signup .hint { margin-top: 14px; font-size: 0.8rem; color: var(--muted); }
-  .signup .status { margin-top: 14px; font-size: 0.9rem; display: none; }
-  .signup .status.ok { display: block; color: #7dc98f; }
-  .signup .status.err { display: block; color: #d98a8a; }
-
-  .legal { padding: 72px 0 96px; max-width: 680px; }
-  .legal h2 { font-size: 1.6rem; margin-bottom: 24px; }
-  .legal h3 { font-size: 1.05rem; margin: 28px 0 8px; }
-  .legal p { color: var(--muted); font-size: 0.95rem; margin-bottom: 12px; }
-  .todo { color: var(--accent); font-style: italic; }
-
-  footer {
-    border-top: 1px solid var(--line); padding: 28px 0;
-    color: var(--muted); font-size: 0.85rem;
-  }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  footer a { color: var(--muted); margin-left: 18px; }
-  footer a:hover { color: var(--text); }
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://kervalt.de/#org",
+      "name": "Kervalt",
+      "description": "On-Premise-KI-Server für den Mittelstand: lokal betriebene Sprachmodelle auf eigener Hardware, ohne Cloud. Beratung, Aufbau, Betrieb und Wartung aus einer Hand.",
+      "url": "https://kervalt.de/",
+      "email": "info@kervalt.de",
+      "founder": {"@type": "Person", "name": "Patrik Kaiser"},
+      "knowsAbout": ["On-Premise KI", "lokale Sprachmodelle", "DSGVO", "Datenschutz", "Retrieval Augmented Generation", "KI-Server", "vLLM"],
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Bayern"},
+        {"@type": "Place", "name": "Oberbayern"},
+        {"@type": "Place", "name": "Chiemgau"},
+        {"@type": "Place", "name": "Traunstein"},
+        {"@type": "Place", "name": "Rosenheim"},
+        {"@type": "Country", "name": "Deutschland"}
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Chiemseestraße 25b",
+        "addressLocality": "Traunstein",
+        "addressRegion": "Bayern",
+        "postalCode": "83278",
+        "addressCountry": "DE"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kervalt.de/#website",
+      "url": "https://kervalt.de/",
+      "name": "Kervalt",
+      "publisher": {"@id": "https://kervalt.de/#org"},
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://kervalt.de/#service",
+      "name": "On-Premise-KI-Server",
+      "serviceType": "Lokal betriebene KI-Infrastruktur",
+      "provider": {"@id": "https://kervalt.de/#org"},
+      "areaServed": {"@type": "Country", "name": "Deutschland"},
+      "audience": {"@type": "BusinessAudience", "audienceType": "Mittelständische Unternehmen"},
+      "description": "Aufbau und Betrieb von KI-Servern, die im Netzwerk des Kunden stehen. Sprachmodelle und Dokumentensuche laufen lokal, ohne Cloud-Anbindung."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Was kostet ein eigener KI-Server?","acceptedAnswer":{"@type":"Answer","text":"Die Spanne ist groß, weil sie an der Grafikkarte hängt. Eine kompakte Maschine für ein kleines Team liegt im niedrigen fünfstelligen Bereich, eine Maschine für den gesamten Betrieb deutlich darüber. Die Hardware reichen wir zum Einkaufspreis weiter, bezahlt werden Einrichtung und Wartung. Weil die GPU-Preise derzeit stark schwanken, halten wir Angebote nur 14 Tage gültig."}},
+    {"@type":"Question","name":"Welche Voraussetzungen muss unser Betrieb erfüllen?","acceptedAnswer":{"@type":"Answer","text":"Ein abschließbarer Raum mit Netzwerkanschluss, eine ausreichend abgesicherte Steckdose und etwas Kühlung. Ein Serverschrank ist praktisch, aber nicht zwingend. Für die Fernwartung brauchen wir einen abgestimmten Zugang, den Sie jederzeit sperren können."}},
+    {"@type":"Question","name":"Welche Sprachmodelle laufen auf so einem Server?","acceptedAnswer":{"@type":"Answer","text":"Offene Modelle, die Sie selbst herunterladen und behalten dürfen, zum Beispiel aus den Familien Llama, Qwen oder Mistral. Ausgeliefert werden sie über vLLM mit einer OpenAI-kompatiblen Schnittstelle, sodass viele vorhandene Werkzeuge ohne Umbau funktionieren. Welches Modell passt, hängt vom verfügbaren Grafikspeicher ab."}},
+    {"@type":"Question","name":"Ist damit automatisch alles DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Nein, und das sollte Ihnen niemand versprechen. Ein Server im eigenen Haus löst den größten Brocken: Es gibt keine Übermittlung in ein Drittland und keinen externen Auftragsverarbeiter für die Verarbeitung selbst. Verzeichnis der Verarbeitungstätigkeiten, Zugriffsrechte, Löschkonzept und die Einbindung Ihres Betriebsrats bleiben Ihre Aufgabe. Wir liefern die technische Dokumentation dafür zu."}},
+    {"@type":"Question","name":"Was passiert, wenn die Hardware ausfällt?","acceptedAnswer":{"@type":"Answer","text":"Bei den kleineren Stufen gilt die Herstellergarantie, und der Betrieb steht so lange still wie eine defekte Grafikkarte braucht. Wer das nicht hinnehmen kann, nimmt eine Stufe mit zwei Karten oder eine Rack-Lösung mit Ersatzteilvorhaltung. Was Ihr Ausfall kostet, klären wir vorher, sonst kauft man Redundanz auf Verdacht."}},
+    {"@type":"Question","name":"Wie lange dauert die Einrichtung?","acceptedAnswer":{"@type":"Answer","text":"Der Aufbau vor Ort dauert in der Regel zwei bis vier Arbeitstage, je nachdem wie viele Dokumentenquellen angebunden werden. Davor liegt die Lieferzeit der Hardware, die derzeit der unsicherste Teil im Zeitplan ist."}}
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#start">Kervalt<span class="dot">.</span></a>
-    <nav class="tabs">
-      <a class="tab" href="#kontakt">Kontakt</a>
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="wordmark" href="/"><span class="led" aria-hidden="true"></span>Kervalt</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/ki-maschinenbau/">Maschinenbau</a>
+      <a href="/ki-kanzlei/">Kanzleien</a>
+      <a href="/ki-praxis/">Praxen</a>
+      <a href="#appliances">Appliances</a>
+      <a href="mailto:info@kervalt.de">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<main id="view-start" class="view active">
-  <div class="wrap">
-    <section class="hero">
-      <h1>Kervalt<span class="dot">.</span></h1>
-      <p class="tagline">Software · Automatisierung · Digitale Produkte</p>
-      <p class="intro">
-        Kervalt entwickelt und vertreibt Software und mobile Anwendungen mit klarem
-        Fokus: durchdachte Produkte, die komplexe Dinge einfach machen — von
-        KI-gestützten Apps bis zur Automatisierung von Geschäftsprozessen.
-      </p>
-    </section>
+<main id="inhalt">
 
-    <section class="fields">
-      <div class="fields-grid">
-        <div class="field">
-          <h3>Software &amp; Apps</h3>
-          <p>Entwicklung und Vertrieb von Software und mobilen Anwendungen — nativ und plattformübergreifend.</p>
-        </div>
-        <div class="field">
-          <h3>IT-Dienstleistungen</h3>
-          <p>Technische Umsetzung, Beratung und Betrieb — pragmatisch und auf den Punkt.</p>
-        </div>
-        <div class="field">
-          <h3>Prozess-Automatisierung</h3>
-          <p>Automatisierung von Geschäftsprozessen, damit wiederkehrende Arbeit von selbst läuft.</p>
-        </div>
-        <div class="field">
-          <h3>Digitale Medieninhalte</h3>
-          <p>Erstellung und Vertrieb digitaler Medieninhalte mit hohem Qualitätsanspruch.</p>
-        </div>
-        <div class="field">
-          <h3>Digitale Publikationen</h3>
-          <p>Herausgabe digitaler Publikationen — kompakt, fundiert, gut lesbar.</p>
-        </div>
-        <div class="field">
-          <h3>Online-Marketing</h3>
-          <p>Sichtbarkeit für digitale Produkte — datenbasiert statt lautstark.</p>
-        </div>
+  <section class="hero wrap">
+    <div>
+      <span class="kicker">On-Premise-KI für den Mittelstand</span>
+      <h1>Ihre KI steht im eigenen Serverraum.</h1>
+      <p class="lead">Kervalt stellt KI-Server bei Ihnen im Haus auf. Angebote, Verträge und technische Unterlagen werden dort verarbeitet, wo sie ohnehin liegen: in Ihrem Netzwerk. Kein Cloud-Dienst liest mit, keine Daten gehen in die USA.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:info@kervalt.de?subject=Erstgespr%C3%A4ch%20KI-Server&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20KI-Server%20im%20eigenen%20Haus.%0A%0ABetrieb%3A%20%0ABranche%3A%20%0AAnzahl%20Mitarbeitende%2C%20die%20damit%20arbeiten%20w%C3%BCrden%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Erstgespräch anfragen</a>
+        <a class="btn btn-ghost" href="#appliances">Größen und Technik ansehen</a>
       </div>
-    </section>
+      <div class="trust">
+        <span><i class="tick" aria-hidden="true"></i> Hardware zum Einkaufspreis</span>
+        <span><i class="tick" aria-hidden="true"></i> Kauf statt Abo</span>
+        <span><i class="tick" aria-hidden="true"></i> Aus Traunstein, Oberbayern</span>
+      </div>
+    </div>
+    <aside class="plate" aria-label="Eckdaten">
+      <div class="plate-hd"><span class="led" aria-hidden="true"></span>Kervalt Appliance</div>
+      <dl>
+        <div class="row"><dt>Standort</dt><dd>Ihr Netzwerk</dd></div>
+        <div class="row"><dt>Datenabfluss</dt><dd>keiner</dd></div>
+        <div class="row"><dt>Schnittstelle</dt><dd>OpenAI-kompatibel</dd></div>
+        <div class="row"><dt>Nutzung</dt><dd>Kauf</dd></div>
+        <div class="row"><dt>Wartung</dt><dd>Fernzugriff</dd></div>
+      </dl>
+    </aside>
+  </section>
 
-    <section class="signup" id="kontakt">
-      <h2>Auf dem Laufenden bleiben</h2>
-      <p>
-        Trag deine E-Mail-Adresse ein, um Neuigkeiten zu den Apps und Projekten von
-        Kervalt zu erhalten — oder einfach, um in Kontakt zu treten.
-      </p>
-      <form id="signup-form" novalidate>
-        <input type="text" class="hp" id="signup-hp" name="firma" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="email" id="signup-email" name="email" placeholder="deine@email.de" required autocomplete="email">
-        <button type="submit">Eintragen</button>
-      </form>
-      <p class="hint">Kein Spam. Keine Weitergabe an Dritte. Jederzeit abmeldbar.</p>
-      <p class="status" id="signup-status"></p>
-    </section>
-  </div>
+  <section class="band">
+    <div class="wrap">
+      <h2>Ihre Leute nutzen längst KI. Die Frage ist nur, wo.</h2>
+      <p>Angebotstexte, Reklamationen, Vertragsentwürfe, Übersetzungen: Vieles davon läuft heute schon durch ein Chatfenster im Browser, meist unbemerkt und mit dem privaten Konto. Ein Verbot schiebt das Problem nur tiefer in den Schatten. Der Ausweg ist nicht weniger KI, sondern eine, die dem Betrieb gehört.</p>
+      <ul class="band-list">
+        <li>Kalkulationen und Kundendaten bleiben im Haus, auch wenn jemand unbedacht kopiert.</li>
+        <li>Kein Vertrag mit einem US-Anbieter, der die Bedingungen im Halbjahrestakt ändert.</li>
+        <li>Ein System, das Sie kontrollieren, protokollieren und im Zweifel abschalten können.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Wofür der Server im Alltag gebraucht wird</span>
+    <h2>Meistens ist es die Suche im eigenen Wissen.</h2>
+    <p class="sub">Der häufigste Grund für einen eigenen KI-Server ist nicht der Chatbot, sondern der Zugriff auf die eigenen Unterlagen: Handbücher, Verträge, Protokolle, Angebote aus zehn Jahren. Das System liest sie und antwortet mit Fundstelle, damit die Antwort prüfbar bleibt.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Fragen an die eigenen Dokumente</h3>
+        <p>Wartungsverträge, Normen, Protokolle, Handbücher. Die Antwort kommt mit Angabe der Quelle, nicht als freies Gerede. Wer nachschlagen will, springt direkt in das Dokument.</p>
+      </article>
+      <article class="card">
+        <h3>Entwürfe für Schriftverkehr</h3>
+        <p>Angebote, Absagen, Reklamationen, Serviceberichte. Der Entwurf entsteht aus Ihren eigenen Vorlagen und Ihrem Ton, nicht aus dem Durchschnitt des Internets.</p>
+      </article>
+      <article class="card">
+        <h3>Wiederkehrende Handgriffe</h3>
+        <p>Eingangsrechnungen erfassen, Mails vorsortieren, Daten zwischen zwei Systemen übergeben. Unspektakulär, aber der Punkt, an dem sich die Anschaffung rechnet.</p>
+      </article>
+      <article class="card">
+        <h3>Übersetzen und Zusammenfassen</h3>
+        <p>Technische Texte in mehreren Sprachen, lange Protokolle auf eine Seite. Auch dann, wenn im Dokument Preise, Namen und Konstruktionsdetails stehen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Drei Branchen, drei verschiedene Gründe</span>
+    <h2>Warum der Server bei Ihnen stehen sollte.</h2>
+    <p class="sub">Das Gerät ist in allen Fällen dasselbe. Der Anlass, es anzuschaffen, ist es nicht: Im Maschinenbau geht es um Know-how, in der Kanzlei um Berufsrecht, in der Praxis um eine besonders geschützte Datenkategorie.</p>
+    <div class="rows">
+      <a class="rowlink" href="/ki-maschinenbau/">
+        <div>
+          <h3>Maschinenbau, Zulieferer und Ingenieurbüros</h3>
+          <p>Konstruktionsdaten und Kalkulationen sind das Kapital des Betriebs. Sie gehören nicht in ein Eingabefeld, dessen Auswertung Sie nicht kennen.</p>
+        </div>
+        <span class="tag">Betriebsgeheimnis</span>
+      </a>
+      <a class="rowlink" href="/ki-kanzlei/">
+        <div>
+          <h3>Rechts- und Steuerkanzleien</h3>
+          <p>Das Mandatsgeheimnis ist strafbewehrt, und für externe Dienstleister gelten eigene Sorgfaltspflichten. Lokale Verarbeitung nimmt die Frage aus dem Weg.</p>
+        </div>
+        <span class="tag">§ 203 StGB</span>
+      </a>
+      <a class="rowlink" href="/ki-praxis/">
+        <div>
+          <h3>Arztpraxen, MVZ und Kliniken</h3>
+          <p>Gesundheitsdaten sind besonders geschützt. Entlastung bringt die KI trotzdem, wenn sie bei der Dokumentation hilft und die Entscheidung beim Arzt bleibt.</p>
+        </div>
+        <span class="tag">Art. 9 DSGVO</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="appliances">
+    <span class="eyebrow">Die Größen</span>
+    <h2>Vier Stufen, ausgewählt wird die kleinste, die reicht.</h2>
+    <p class="sub">Wie groß die Maschine sein muss, ergibt sich aus zwei Fragen: Wie viele Leute arbeiten gleichzeitig damit, und wie gut müssen die Antworten sein. Der Grafikspeicher entscheidet, welche Modellgröße überhaupt läuft; die Zahl der Karten entscheidet, wie viele Anfragen parallel bedient werden.</p>
+    <div class="tbl-scroll">
+      <table>
+        <caption>Richtwerte, Stand September 2026. Hardware und Preise ändern sich derzeit schnell.</caption>
+        <thead>
+          <tr><th scope="col">Stufe</th><th scope="col">Grafikkarten</th><th scope="col">Grafikspeicher</th><th scope="col">Modellklasse</th><th scope="col">Gedacht für</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Kompakt</th>
+            <td>1 × RTX 5090</td><td class="num">32 GB</td><td class="num">7–14 B</td>
+            <td>Eine Abteilung oder ein kleines Team, das den Einstieg sucht.</td>
+          </tr>
+          <tr>
+            <th scope="row">Professional</th>
+            <td>1 × RTX PRO 6000 Blackwell</td><td class="num">96 GB</td><td class="num">bis 40–70 B</td>
+            <td>Der Regelfall im Mittelstand. Deutlich bessere Antworten bei überschaubarem Sprung im Preis.</td>
+          </tr>
+          <tr>
+            <th scope="row">Enterprise</th>
+            <td>2 × RTX PRO 6000</td><td class="num">192 GB</td><td class="num">70 B und größer</td>
+            <td>Viele gleichzeitige Nutzer oder mehrere Modelle nebeneinander, mit Reserve bei Kartenausfall.</td>
+          </tr>
+          <tr>
+            <th scope="row">Enterprise HA</th>
+            <td>4–8 × RTX PRO 6000</td><td class="num">384–768 GB</td><td class="num">mehrere parallel</td>
+            <td>Rackbetrieb mit Redundanz und vereinbarter Reaktionszeit.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint" style="margin-top:14px">Die Angabe „B“ steht für Milliarden Parameter und ist ein grobes Maß für die Leistungsfähigkeit eines Sprachmodells. Welche Stufe zu Ihnen passt, lässt sich in einem Gespräch schneller klären als über ein Formular.</p>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Preislogik</span>
+    <h2>Auf die Maschine schlagen wir nichts drauf.</h2>
+    <p class="sub">Was eine Grafikkarte kostet, können Sie selbst nachsehen. Deshalb versuchen wir gar nicht erst, daran zu verdienen: Die Hardware bekommen Sie zum Einkaufspreis, den Beleg des Lieferanten legen wir bei. Bezahlt wird die Arbeit.</p>
+    <div class="split">
+      <div>
+        <h3>Was Sie kaufen</h3>
+        <ul>
+          <li>Server, Grafikkarten, Speicher, Netzteil <span class="amount">zum Einkaufspreis</span></li>
+          <li>Eine Handlingpauschale für Beschaffung, Aufbau und Transport</li>
+          <li>Das Gerät gehört danach Ihnen, ohne Laufzeit und ohne Rückgabe</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Was Sie bezahlen</h3>
+        <ul>
+          <li>Einrichtung und Integration zum <span class="amount">Festpreis</span>, in der Regel zwei bis vier Tage</li>
+          <li>Wartung per Fernzugriff, <span class="amount">monatlich</span> und kündbar</li>
+          <li>Keine Kosten pro Anfrage, kein Preis pro Nutzer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="panel">
+      <h2>Der Digitalbonus fördert nicht die Maschine, sondern die Einrichtung.</h2>
+      <p>Das wird oft falsch dargestellt, deshalb hier ausführlich: Der Digitalbonus Bayern fördert Leistungen externer Anbieter, also Einrichtung, Installation, Anpassung, Programmierung und technische Dokumentation. IKT-Hardware ist ausdrücklich ausgenommen. Der KI-Server selbst ist damit in aller Regel nicht förderfähig, unsere Arbeit daran schon.</p>
+      <dl>
+        <dt>Standard</dt><dd>bis 7.500 € Zuschuss, Fördersatz bis 50 % der förderfähigen Ausgaben</dd>
+        <dt>Plus</dt><dd>bis 30.000 € bei besonderem Innovationsgehalt; künstliche Intelligenz ist in der Richtlinie ausdrücklich als Beispiel genannt</dd>
+        <dt>Wer</dt><dd>kleine Unternehmen der gewerblichen Wirtschaft, unter 50 Beschäftigte, höchstens 10 Mio. € Umsatz oder Bilanzsumme, Betriebsstätte in Bayern</dd>
+        <dt>Wer nicht</dt><dd>freie Berufe, Arztpraxen, MVZ, Kliniken und Apotheken sind von der Förderung ausgenommen</dd>
+        <dt>Reihenfolge</dt><dd>erst der Bewilligungsbescheid, dann die Beauftragung. Wer vorher bestellt, verliert den Anspruch</dd>
+      </dl>
+      <p>Den Antrag stellt Ihr Unternehmen selbst über das ELSTER-Unternehmenskonto. Das schreibt das Programm so vor, Dienstleister dürfen das ausdrücklich nicht übernehmen. Was wir liefern, sind die Unterlagen, die Sie dafür brauchen: ein aufgeschlüsseltes Angebot und die Projektbeschreibung.</p>
+      <p class="hint">Angaben nach der Förderrichtlinie, Stand September 2026; das Programm läuft bis 31.12.2027, Anträge werden über ein monatliches Kontingent freigegeben. Eine Förderung ist eine freiwillige Leistung ohne Rechtsanspruch. Verbindlich ist allein die Auskunft der zuständigen Bezirksregierung. Wir leisten keine Förder-, Rechts- oder Steuerberatung.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Ablauf</span>
+    <h2>Vom ersten Telefonat bis zum laufenden Betrieb.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Erstgespräch</h3><p>Eine halbe Stunde, kostenlos. Wir sehen uns an, wo im Betrieb überhaupt etwas zu holen ist.</p></div>
+      <div class="step"><div class="n">02</div><h3>Auslegung</h3><p>Nutzerzahl, Qualitätsanspruch und Dokumentenmenge ergeben die passende Stufe und ein Festpreisangebot.</p></div>
+      <div class="step"><div class="n">03</div><h3>Aufbau</h3><p>Maschine aufstellen, Modelle einrichten, Ihre Dokumente anbinden, Team einweisen. Zwei bis vier Tage.</p></div>
+      <div class="step"><div class="n">04</div><h3>Betrieb</h3><p>Überwachung, Updates und Support per Fernzugriff. Sie behalten den Schlüssel zum Zugang.</p></div>
+    </div>
+  </section>
+
+  <section class="sec wrap prose">
+    <span class="eyebrow">Wer dahintersteht</span>
+    <h2>Ein Ansprechpartner, kein Ticketsystem.</h2>
+    <p>Hinter Kervalt steht Patrik Kaiser. Ich komme aus der Inbetriebnahme im Maschinenbau und kenne die Seite, auf der die Anlage am Ende laufen muss. Wer bei mir anruft, spricht mit der Person, die den Server aufgestellt hat.</p>
+    <p>Der Sitz ist Traunstein. Im Chiemgau und im Raum Rosenheim komme ich vorbei, für alles Weitere gibt es die Fernwartung. Größere Häuser mit eigener IT-Abteilung sind ausdrücklich willkommen: Dann übernehmen wir den Aufbau und Ihre Leute den Betrieb.</p>
+  </section>
+
+  <section class="sec wrap faq">
+    <span class="eyebrow">Häufige Fragen</span>
+    <h2>Was Betriebe vorher wissen wollen.</h2>
+    <div style="margin-top:20px">
+      <details open>
+        <summary>Was kostet ein eigener KI-Server?</summary>
+        <p>Die Spanne ist groß, weil sie an der Grafikkarte hängt. Eine kompakte Maschine für ein kleines Team liegt im niedrigen fünfstelligen Bereich, eine Maschine für den gesamten Betrieb deutlich darüber. Die Hardware reichen wir zum Einkaufspreis weiter, bezahlt werden Einrichtung und Wartung. Weil die GPU-Preise derzeit stark schwanken, halten wir Angebote nur 14 Tage gültig.</p>
+      </details>
+      <details>
+        <summary>Welche Voraussetzungen muss unser Betrieb erfüllen?</summary>
+        <p>Ein abschließbarer Raum mit Netzwerkanschluss, eine ausreichend abgesicherte Steckdose und etwas Kühlung. Ein Serverschrank ist praktisch, aber nicht zwingend. Für die Fernwartung brauchen wir einen abgestimmten Zugang, den Sie jederzeit sperren können.</p>
+      </details>
+      <details>
+        <summary>Welche Sprachmodelle laufen auf so einem Server?</summary>
+        <p>Offene Modelle, die Sie selbst herunterladen und behalten dürfen, zum Beispiel aus den Familien Llama, Qwen oder Mistral. Ausgeliefert werden sie über vLLM mit einer OpenAI-kompatiblen Schnittstelle, sodass viele vorhandene Werkzeuge ohne Umbau funktionieren. Welches Modell passt, hängt vom verfügbaren Grafikspeicher ab.</p>
+      </details>
+      <details>
+        <summary>Ist damit automatisch alles DSGVO-konform?</summary>
+        <p>Nein, und das sollte Ihnen niemand versprechen. Ein Server im eigenen Haus löst den größten Brocken: Es gibt keine Übermittlung in ein Drittland und keinen externen Auftragsverarbeiter für die Verarbeitung selbst. Verzeichnis der Verarbeitungstätigkeiten, Zugriffsrechte, Löschkonzept und die Einbindung Ihres Betriebsrats bleiben Ihre Aufgabe. Wir liefern die technische Dokumentation dafür zu.</p>
+      </details>
+      <details>
+        <summary>Was passiert, wenn die Hardware ausfällt?</summary>
+        <p>Bei den kleineren Stufen gilt die Herstellergarantie, und der Betrieb steht so lange still wie eine defekte Grafikkarte braucht. Wer das nicht hinnehmen kann, nimmt eine Stufe mit zwei Karten oder eine Rack-Lösung mit Ersatzteilvorhaltung. Was Ihr Ausfall kostet, klären wir vorher, sonst kauft man Redundanz auf Verdacht.</p>
+      </details>
+      <details>
+        <summary>Wie lange dauert die Einrichtung?</summary>
+        <p>Der Aufbau vor Ort dauert in der Regel zwei bis vier Arbeitstage, je nachdem wie viele Dokumentenquellen angebunden werden. Davor liegt die Lieferzeit der Hardware, die derzeit der unsicherste Teil im Zeitplan ist.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <h2>Reden wir eine halbe Stunde darüber.</h2>
+      <p>Im Erstgespräch klären wir, ob sich ein eigener Server für Sie überhaupt lohnt. Wenn nicht, sagen wir das. Ein Betrieb mit fünf Leuten und drei Dokumenten im Jahr braucht keine eigene Maschine.</p>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="mailto:info@kervalt.de?subject=Erstgespr%C3%A4ch%20KI-Server&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20KI-Server%20im%20eigenen%20Haus.%0A%0ABetrieb%3A%20%0ABranche%3A%20%0AAnzahl%20Mitarbeitende%2C%20die%20damit%20arbeiten%20w%C3%BCrden%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Erstgespräch anfragen</a>
+        <a class="btn btn-onpine" href="#appliances">Erst die Technik ansehen</a>
+      </div>
+      <p class="note">Sie erreichen uns unter info@kervalt.de. Eine Rückmeldung kommt in der Regel am selben oder nächsten Werktag.</p>
+    </div>
+  </section>
+
+  <section class="wrap signup" id="verteiler">
+    <h2>Notizen aus der Praxis</h2>
+    <p>Unregelmäßig, ein paar Mal im Jahr: was sich bei lokalen Modellen getan hat, was eine Maschine derzeit kostet, was in Projekten schiefgegangen ist. Kein Newsletter im üblichen Sinn.</p>
+    <form id="signup-form" novalidate>
+      <label class="hp" for="signup-hp">Firma (bitte frei lassen)</label>
+      <input class="hp" type="text" id="signup-hp" name="firma" tabindex="-1" autocomplete="off">
+      <label class="hp" for="signup-email">E-Mail-Adresse</label>
+      <input type="email" id="signup-email" name="email" placeholder="ihre@firma.de" required autocomplete="email">
+      <button class="btn btn-ghost" type="submit">Eintragen</button>
+    </form>
+    <p class="status" id="signup-status" role="status"></p>
+    <p class="hint" style="margin-top:14px">Die Adresse wird nur dafür verwendet und nicht weitergegeben. Abmeldung jederzeit per E-Mail, Näheres in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
+  </section>
+
 </main>
 
-<main id="view-impressum" class="view">
-  <div class="wrap legal">
-    <h2>Impressum</h2>
-    <p>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz):</p>
-    <h3>Anbieter</h3>
-    <p>Patrik Kaiser<br>Kervalt (Einzelunternehmen)<br>Chiemseestraße 25b<br>83278 Traunstein</p>
-    <h3>Kontakt</h3>
-    <p>E-Mail: <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
-  </div>
-</main>
-
-<main id="view-datenschutz" class="view">
-  <div class="wrap legal">
-    <h2>Datenschutzerklärung</h2>
-    <h3>Verantwortlicher</h3>
-    <p>Patrik Kaiser · Kervalt<br>Chiemseestraße 25b<br>83278 Traunstein<br>
-       E-Mail: <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
-    <h3>Hosting</h3>
-    <p>
-      Diese Website wird bei <strong>GitHub Pages</strong> gehostet (GitHub, Inc.,
-      88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA). Beim Aufruf der
-      Seite verarbeitet GitHub technisch notwendige Daten (insbesondere die
-      IP-Adresse) in Server-Logs, um die Website auszuliefern und deren Sicherheit
-      zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO — berechtigtes Interesse am
-      Betrieb der Website). GitHub ist unter dem EU-U.S. Data Privacy Framework
-      zertifiziert. Näheres in der
-      <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>.
-    </p>
-    <h3>E-Mail-Eintragung</h3>
-    <p>
-      Wenn du deine E-Mail-Adresse über das Formular einträgst, verwenden wir sie
-      ausschließlich, um dich über Neuigkeiten zu Kervalt-Produkten zu informieren
-      bzw. deine Kontaktanfrage zu beantworten (Art. 6 Abs. 1 lit. a DSGVO —
-      Einwilligung). Du kannst dich jederzeit formlos per E-Mail wieder abmelden;
-      deine Adresse wird dann gelöscht.
-    </p>
-    <p>
-      Die eingetragenen Adressen werden in einer eigenen Datenbank von Kervalt
-      gespeichert, betrieben auf der Cloud-Plattform <strong>Railway</strong>
-      (Railway Corp., USA) als Auftragsverarbeiter.
-    </p>
-    <h3>Deine Rechte</h3>
-    <p>
-      Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der
-      Verarbeitung deiner Daten sowie ein Beschwerderecht bei einer
-      Datenschutz-Aufsichtsbehörde.
-    </p>
-  </div>
-</main>
-
-<footer>
+<footer class="ft">
   <div class="wrap">
-    <span>© 2026 Kervalt</span>
-    <span>
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
-    </span>
+    <nav aria-label="Fußzeile">
+      <a href="/ki-maschinenbau/">Maschinenbau</a>
+      <a href="/ki-kanzlei/">Kanzleien</a>
+      <a href="/ki-praxis/">Praxen und MVZ</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p>Kervalt, Patrik Kaiser. On-Premise-KI-Server für den Mittelstand. Chiemseestraße 25b, 83278 Traunstein. <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
   </div>
 </footer>
 
 <script>
-  const BACKEND_URL = "https://kervalt-production.up.railway.app";
-  const CONTACT_EMAIL = "info@kervalt.de";
+(function () {
+  var legacy = { impressum: "/impressum/", datenschutz: "/datenschutz/", kontakt: "#verteiler" };
+  var target = legacy[location.hash.slice(1)];
+  if (target && target.charAt(0) === "/") { location.replace(target); }
 
-  const VIEWS = ["start", "impressum", "datenschutz"];
-  function showView(name) {
-    const anchor = name === "kontakt";
-    if (anchor || !VIEWS.includes(name)) name = "start";
-    document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
-    document.getElementById("view-" + name).classList.add("active");
-    if (anchor) document.getElementById("kontakt").scrollIntoView({ behavior: "smooth" });
-    else window.scrollTo({ top: 0 });
-  }
-  window.addEventListener("hashchange", () => showView(location.hash.slice(1)));
-  showView(location.hash.slice(1));
+  var BACKEND_URL = "https://kervalt-production.up.railway.app";
+  var form = document.getElementById("signup-form");
+  var statusEl = document.getElementById("signup-status");
+  if (!form) return;
 
-  const form = document.getElementById("signup-form");
-  const statusEl = document.getElementById("signup-status");
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const email = document.getElementById("signup-email").value.trim();
+    var email = document.getElementById("signup-email").value.trim();
     statusEl.className = "status";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      statusEl.textContent = "Bitte gib eine gültige E-Mail-Adresse ein.";
+      statusEl.textContent = "Bitte eine gültige E-Mail-Adresse eingeben.";
       statusEl.classList.add("err");
       return;
     }
     if (document.getElementById("signup-hp").value) {
-      statusEl.textContent = "Danke! Du bist eingetragen.";
+      statusEl.textContent = "Danke, die Adresse ist eingetragen.";
       statusEl.classList.add("ok");
       form.reset();
       return;
     }
-    if (BACKEND_URL) {
-      try {
-        const res = await fetch(BACKEND_URL + "/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: email.toLowerCase() })
-        });
-        if (res.status === 201) {
-          statusEl.textContent = "Danke! Du bist eingetragen.";
-          statusEl.classList.add("ok");
-          form.reset();
-        } else if (res.status === 409) {
-          statusEl.textContent = "Diese Adresse ist bereits eingetragen — alles gut!";
-          statusEl.classList.add("ok");
-          form.reset();
-        } else {
-          throw new Error();
-        }
-      } catch {
-        statusEl.textContent = "Das hat leider nicht geklappt. Versuch es später noch einmal.";
-        statusEl.classList.add("err");
+    fetch(BACKEND_URL + "/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email.toLowerCase() })
+    }).then(function (res) {
+      if (res.status === 201) {
+        statusEl.textContent = "Danke, die Adresse ist eingetragen.";
+        statusEl.classList.add("ok");
+        form.reset();
+      } else if (res.status === 409) {
+        statusEl.textContent = "Diese Adresse steht bereits auf der Liste.";
+        statusEl.classList.add("ok");
+        form.reset();
+      } else {
+        throw new Error("unerwarteter Status");
       }
-    } else {
-      location.href = "mailto:" + CONTACT_EMAIL
-        + "?subject=" + encodeURIComponent("Kervalt — auf dem Laufenden bleiben")
-        + "&body=" + encodeURIComponent("Hallo,\n\nbitte nehmt mich in den Verteiler auf.\n\nMeine E-Mail: " + email);
-      statusEl.textContent = "Dein E-Mail-Programm öffnet sich — einfach absenden.";
-      statusEl.classList.add("ok");
-    }
+    }).catch(function () {
+      statusEl.innerHTML = 'Das hat gerade nicht geklappt. Schreiben Sie uns bitte kurz an <a href="mailto:info@kervalt.de">info@kervalt.de</a>.';
+      statusEl.classList.add("err");
+    });
   });
+})();
 </script>
 
 </body>

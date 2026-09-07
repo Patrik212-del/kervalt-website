@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KI für Kanzleien, ohne dass Mandantendaten die Kanzlei verlassen | Kervalt</title>
+<meta name="description" content="On-Premise-KI für Rechts- und Steuerkanzleien: Akten durchsuchen, Entwürfe erstellen, Post sortieren. Verarbeitung ausschließlich auf dem eigenen Server, vereinbar mit Verschwiegenheitspflicht und § 203 StGB.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0E3B32">
+<link rel="canonical" href="https://kervalt.de/ki-kanzlei/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kervalt">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="KI für Kanzleien, ohne dass Mandantendaten die Kanzlei verlassen">
+<meta property="og:description" content="Akten durchsuchen, Entwürfe erstellen, Post sortieren. Die Verarbeitung bleibt auf Ihrem eigenen Server.">
+<meta property="og:url" content="https://kervalt.de/ki-kanzlei/">
+<meta property="og:image" content="https://kervalt.de/assets/og-kanzlei.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://kervalt.de/ki-kanzlei/#service",
+      "name": "On-Premise-KI für Rechts- und Steuerkanzleien",
+      "serviceType": "Lokal betriebene KI-Infrastruktur",
+      "provider": {"@id": "https://kervalt.de/#org"},
+      "areaServed": {"@type": "Country", "name": "Deutschland"},
+      "audience": {"@type": "BusinessAudience", "audienceType": "Rechtsanwaltskanzleien, Steuerkanzleien, Notariate"},
+      "description": "KI-Server im Kanzleinetz für Aktenrecherche, Entwürfe und Posteingang. Mandatsdaten werden ausschließlich lokal verarbeitet."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kervalt.de/ki-kanzlei/",
+      "url": "https://kervalt.de/ki-kanzlei/",
+      "name": "KI für Rechts- und Steuerkanzleien",
+      "isPartOf": {"@id": "https://kervalt.de/#website"},
+      "about": {"@id": "https://kervalt.de/ki-kanzlei/#service"},
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://kervalt.de/"},
+        {"@type": "ListItem", "position": 2, "name": "KI für Kanzleien", "item": "https://kervalt.de/ki-kanzlei/"}
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Ist der Einsatz von KI mit der anwaltlichen Verschwiegenheitspflicht vereinbar?","acceptedAnswer":{"@type":"Answer","text":"Bei einem Cloud-Dienst ist das die entscheidende Hürde, weil Mandatsdaten an einen Dritten gelangen. Läuft das Modell auf einem Server in Ihren Räumen, findet die Verarbeitung innerhalb der Kanzlei statt und die Frage stellt sich für den laufenden Betrieb nicht. Zu klären bleibt der Wartungszugang, denn dabei kann ein Dienstleister technisch an Daten gelangen. Genau dafür sehen § 43e BRAO und § 62a StBerG eine sorgfältige Auswahl und eine Verpflichtung zur Verschwiegenheit vor. Das ist keine Rechtsberatung, sondern die Beschreibung der Punkte, die Sie prüfen sollten."}},
+    {"@type":"Question","name":"Hat Kervalt über die Fernwartung Zugriff auf Mandatsakten?","acceptedAnswer":{"@type":"Answer","text":"Technisch ist ein Wartungszugang immer ein möglicher Zugang zu Daten, alles andere wäre unehrlich. Deshalb regeln wir ihn ausdrücklich: Verpflichtung zur Verschwiegenheit in Textform vor dem ersten Zugriff, Freigabe durch Sie im Einzelfall statt Dauerzugang, Protokollierung jeder Sitzung. Auf Wunsch entfällt der Fernzugang vollständig, dann übernimmt Ihre IT die Wartung nach Anleitung oder wir kommen vorbei."}},
+    {"@type":"Question","name":"Kann die KI Schriftsätze schreiben?","acceptedAnswer":{"@type":"Answer","text":"Entwürfe ja, fertige Schriftsätze nein. Brauchbar ist das System, wenn es aus Ihren eigenen Mustern und der Akte einen ersten Aufschlag formuliert. Was es nicht kann, ist verlässlich zitieren: Sprachmodelle erfinden Fundstellen, die es nie gab, und tun das überzeugend. Jede Fundstelle muss geprüft werden. Wer damit rechnet, spart Zeit. Wer darauf vertraut, bekommt Ärger."}},
+    {"@type":"Question","name":"Kennt das Modell die aktuelle Rechtsprechung?","acceptedAnswer":{"@type":"Answer","text":"Nein, und darauf sollte man es auch nicht ansetzen. Ein lokales Modell hat einen Wissensstand aus seinem Training und keine Verbindung zu einer Rechtsprechungsdatenbank. Der Nutzen liegt woanders: Es durchsucht Ihre eigenen Akten, Verträge und Vorlagen, also genau die Bestände, die in keiner Datenbank stehen. Für die Recherche in Rechtsprechung und Kommentierung bleiben Ihre Fachdatenbanken zuständig."}},
+    {"@type":"Question","name":"Können Kanzleien den Digitalbonus Bayern in Anspruch nehmen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Digitalbonus richtet sich an kleine Unternehmen der gewerblichen Wirtschaft; freie Berufe sind ausdrücklich von der Förderung ausgenommen, im Grundsatz auch dann, wenn sie in gewerblicher Rechtsform ausgeübt werden. Wenn Ihnen jemand für eine Kanzlei fünfzig Prozent Digitalbonus verspricht, hat er die Richtlinie nicht gelesen. Ob andere Programme oder Finanzierungswege in Frage kommen, ist eine Frage für Ihre steuerliche Beratung."}},
+    {"@type":"Question","name":"Wie passt das zu unserer Kanzleisoftware?","acceptedAnswer":{"@type":"Answer","text":"Der Server ersetzt nichts davon. Angebunden wird lesend, über die vorhandenen Schnittstellen oder über den Zugriff auf die Dokumentenablage. Ihre Kanzleisoftware, das Dokumentenmanagement und die Fristenverwaltung bleiben führend und unverändert."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="wordmark" href="/"><span class="led" aria-hidden="true"></span>Kervalt</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/ki-maschinenbau/">Maschinenbau</a>
+      <a href="/ki-kanzlei/" aria-current="page">Kanzleien</a>
+      <a href="/ki-praxis/">Praxen</a>
+      <a href="/#appliances">Appliances</a>
+      <a href="mailto:info@kervalt.de">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <section class="hero wrap">
+    <div>
+      <span class="kicker">Für Rechts- und Steuerkanzleien</span>
+      <h1>Die Akte bleibt in der Kanzlei.</h1>
+      <p class="lead">Ein KI-Server in Ihren eigenen Räumen durchsucht Akten, bereitet Entwürfe vor und sortiert den Posteingang. Mandatsdaten werden dabei nicht an einen Cloud-Anbieter übergeben, weil sie die Kanzlei gar nicht erst verlassen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:info@kervalt.de?subject=Erstgespr%C3%A4ch%20KI%20in%20der%20Kanzlei&amp;body=Guten%20Tag%2C%0A%0Awir%20sind%20eine%20Kanzlei%20und%20interessieren%20uns%20f%C3%BCr%20einen%20KI-Server%20in%20den%20eigenen%20R%C3%A4umen.%0A%0AKanzlei%3A%20%0AAnzahl%20Berufstr%C3%A4ger%20und%20Mitarbeitende%3A%20%0AWorum%20es%20zuerst%20gehen%20soll%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Erstgespräch anfragen</a>
+        <a class="btn btn-ghost" href="#berufsrecht">Berufsrechtliche Einordnung</a>
+      </div>
+      <div class="trust">
+        <span><i class="tick" aria-hidden="true"></i> Verarbeitung nur im Kanzleinetz</span>
+        <span><i class="tick" aria-hidden="true"></i> Verschwiegenheit vor dem ersten Zugriff</span>
+        <span><i class="tick" aria-hidden="true"></i> Kein Dauerzugang zur Wartung</span>
+      </div>
+    </div>
+    <aside class="plate" aria-label="Eckdaten für Kanzleien">
+      <div class="plate-hd"><span class="led" aria-hidden="true"></span>In der Kanzlei</div>
+      <dl>
+        <div class="row"><dt>Aufstellung</dt><dd>Ihre Räume</dd></div>
+        <div class="row"><dt>Mandatsdaten</dt><dd>bleiben lokal</dd></div>
+        <div class="row"><dt>Wartungszugang</dt><dd>auf Freigabe</dd></div>
+        <div class="row"><dt>Kanzleisoftware</dt><dd>bleibt führend</dd></div>
+      </dl>
+    </aside>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Das Problem ist nicht die Technik, sondern wer mitliest.</h2>
+      <p>Die Aufgaben, für die sich KI in einer Kanzlei lohnt, betreffen fast immer Mandatsdaten. Eine Akte zusammenfassen, einen Vertrag gegen eine Checkliste prüfen, aus fünf Schreiben den Sachverhalt herausziehen: Sobald das in einem Browserfenster passiert, liegt der Vorgang bei einem Dritten. Für einen Berufsträger ist das keine Geschmacksfrage.</p>
+      <ul class="band-list">
+        <li>Die Verschwiegenheitspflicht ist strafbewehrt und kennt keine Ausnahme für Zeitdruck.</li>
+        <li>Wer Dienstleister einbindet, trägt eigene Auswahl- und Verpflichtungspflichten.</li>
+        <li>Ein Zwischenfall trifft nicht die IT, sondern die Zulassung.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Wo es in der Kanzlei Zeit spart</span>
+    <h2>Vier Aufgaben, die jede Woche wiederkommen.</h2>
+    <p class="sub">Der Nutzen entsteht nicht bei der spektakulären Rechtsfrage, sondern bei der Fleißarbeit davor: suchen, sichten, sortieren, einen ersten Entwurf hinstellen.</p>
+    <div class="cards">
+      <article class="card">
+        <h3>Akten und Bestände durchsuchen</h3>
+        <p>Wo stand noch einmal die Klausel zur Haftungsbegrenzung, und in welchem Mandat haben wir zu dieser Konstellation schon vorgetragen? Die Antwort kommt mit Verweis auf Dokument und Fundstelle in Ihrem eigenen Bestand.</p>
+      </article>
+      <article class="card">
+        <h3>Entwürfe aus eigenen Mustern</h3>
+        <p>Wiederkehrende Schreiben, Mandatsanfragen, Standardvorgänge. Grundlage sind Ihre Vorlagen und Ihr Ton, nicht ein allgemeines Sprachmuster aus dem Netz.</p>
+      </article>
+      <article class="card">
+        <h3>Posteingang aufbereiten</h3>
+        <p>Eingehende Schreiben werden dem Mandat zugeordnet, zusammengefasst und mit einem Hinweis versehen, wenn darin eine Frist genannt ist. Eingetragen und verantwortet wird die Frist weiterhin von der Kanzlei.</p>
+      </article>
+      <article class="card">
+        <h3>Verträge gegen Checkliste sichten</h3>
+        <p>Ein längeres Vertragswerk wird gegen Ihre eigene Prüfliste durchgesehen und die auffälligen Stellen werden markiert. Das ersetzt keine Prüfung, aber es zeigt, wo man hinschauen muss.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="berufsrecht">
+    <div class="panel plain">
+      <h2>Die berufsrechtliche Frage verschiebt sich, sie verschwindet nicht.</h2>
+      <p>Ein Server in den eigenen Räumen löst den größeren Teil des Problems: Für die laufende Verarbeitung gibt es keinen externen Dienstleister, keine Übermittlung in ein Drittland und keinen Anbieter, der Eingaben zu eigenen Zwecken auswerten könnte. Was bleibt, ist der Wartungszugang, und den behandeln wir ausdrücklich als das, was er ist.</p>
+      <dl>
+        <dt>§ 203 StGB</dt><dd>Die Verletzung von Privatgeheimnissen ist strafbewehrt. Absatz 3 erlaubt die Mitwirkung Dritter, verlangt aber deren Verpflichtung zur Verschwiegenheit.</dd>
+        <dt>§ 43e BRAO</dt><dd>Für Rechtsanwälte geregelt: sorgfältige Auswahl des Dienstleisters, Verpflichtung zur Verschwiegenheit in Textform, Beschränkung auf das Erforderliche.</dd>
+        <dt>§ 62a StBerG</dt><dd>Die entsprechende Regelung für Steuerberater.</dd>
+        <dt>In der Praxis</dt><dd>Verpflichtung unterzeichnet, bevor ein Zugang eingerichtet wird. Freigabe im Einzelfall statt Dauerzugang. Jede Sitzung wird protokolliert. Auf Wunsch ganz ohne Fernzugang.</dd>
+      </dl>
+      <p class="hint">Diese Übersicht nennt die Punkte, die in Gesprächen mit Kanzleien regelmäßig aufkommen. Sie ist keine Rechtsberatung und ersetzt weder Ihre eigene Prüfung noch die Auskunft Ihrer Kammer.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Kosten</span>
+    <h2>Zur Förderung, bevor es jemand anders verspricht.</h2>
+    <p class="sub">Auf vielen Anbieterseiten steht ein Förderversprechen über der Kanzlei-Seite. Für Sie trifft es nicht zu, und das sollten Sie wissen, bevor Sie damit rechnen.</p>
+    <div class="split">
+      <div>
+        <h3>Warum der Digitalbonus ausfällt</h3>
+        <ul>
+          <li>Das Programm richtet sich an kleine Unternehmen der <span class="amount">gewerblichen</span> Wirtschaft</li>
+          <li>Freie Berufe sind ausdrücklich ausgenommen, im Grundsatz auch in gewerblicher Rechtsform</li>
+          <li>Zu Sonderfällen gibt allein die zuständige Bezirksregierung verbindlich Auskunft</li>
+          <li>Ob andere Wege in Frage kommen, gehört zu Ihrer steuerlichen Beratung, nicht zu unserer</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Was stattdessen zählt</h3>
+        <ul>
+          <li>Hardware <span class="amount">zum Einkaufspreis</span>, Beleg des Lieferanten liegt bei</li>
+          <li>Einrichtung zum <span class="amount">Festpreis</span>, in der Regel zwei bis vier Tage</li>
+          <li>Wartung <span class="amount">monatlich</span> und kündbar, keine Kosten pro Abfrage</li>
+          <li>Die Maschine gehört der Kanzlei und lässt sich abschreiben wie anderes Anlagevermögen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <span class="eyebrow">Ablauf</span>
+    <h2>Vom ersten Gespräch bis zum laufenden Betrieb.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Erstgespräch</h3><p>Eine halbe Stunde, kostenlos. Welche Bestände gibt es, wer soll damit arbeiten, was kostet heute die meiste Zeit.</p></div>
+      <div class="step"><div class="n">02</div><h3>Vereinbarung</h3><p>Verschwiegenheitsverpflichtung und Zugangsregelung werden schriftlich festgehalten, bevor Technik ins Haus kommt.</p></div>
+      <div class="step"><div class="n">03</div><h3>Aufbau</h3><p>Server aufstellen, Modelle einrichten, Ablage lesend anbinden, Berufsträger und Mitarbeitende einweisen.</p></div>
+      <div class="step"><div class="n">04</div><h3>Betrieb</h3><p>Updates und Support nach Freigabe im Einzelfall, jede Sitzung protokolliert.</p></div>
+    </div>
+  </section>
+
+  <section class="sec wrap faq">
+    <span class="eyebrow">Häufige Fragen aus Kanzleien</span>
+    <h2>Nachgefragt.</h2>
+    <div style="margin-top:20px">
+      <details open>
+        <summary>Ist der Einsatz von KI mit der anwaltlichen Verschwiegenheitspflicht vereinbar?</summary>
+        <p>Bei einem Cloud-Dienst ist das die entscheidende Hürde, weil Mandatsdaten an einen Dritten gelangen. Läuft das Modell auf einem Server in Ihren Räumen, findet die Verarbeitung innerhalb der Kanzlei statt und die Frage stellt sich für den laufenden Betrieb nicht. Zu klären bleibt der Wartungszugang, denn dabei kann ein Dienstleister technisch an Daten gelangen. Genau dafür sehen § 43e BRAO und § 62a StBerG eine sorgfältige Auswahl und eine Verpflichtung zur Verschwiegenheit vor. Das ist keine Rechtsberatung, sondern die Beschreibung der Punkte, die Sie prüfen sollten.</p>
+      </details>
+      <details>
+        <summary>Hat Kervalt über die Fernwartung Zugriff auf Mandatsakten?</summary>
+        <p>Technisch ist ein Wartungszugang immer ein möglicher Zugang zu Daten, alles andere wäre unehrlich. Deshalb regeln wir ihn ausdrücklich: Verpflichtung zur Verschwiegenheit in Textform vor dem ersten Zugriff, Freigabe durch Sie im Einzelfall statt Dauerzugang, Protokollierung jeder Sitzung. Auf Wunsch entfällt der Fernzugang vollständig, dann übernimmt Ihre IT die Wartung nach Anleitung oder wir kommen vorbei.</p>
+      </details>
+      <details>
+        <summary>Kann die KI Schriftsätze schreiben?</summary>
+        <p>Entwürfe ja, fertige Schriftsätze nein. Brauchbar ist das System, wenn es aus Ihren eigenen Mustern und der Akte einen ersten Aufschlag formuliert. Was es nicht kann, ist verlässlich zitieren: Sprachmodelle erfinden Fundstellen, die es nie gab, und tun das überzeugend. Jede Fundstelle muss geprüft werden. Wer damit rechnet, spart Zeit. Wer darauf vertraut, bekommt Ärger.</p>
+      </details>
+      <details>
+        <summary>Kennt das Modell die aktuelle Rechtsprechung?</summary>
+        <p>Nein, und darauf sollte man es auch nicht ansetzen. Ein lokales Modell hat einen Wissensstand aus seinem Training und keine Verbindung zu einer Rechtsprechungsdatenbank. Der Nutzen liegt woanders: Es durchsucht Ihre eigenen Akten, Verträge und Vorlagen, also genau die Bestände, die in keiner Datenbank stehen. Für die Recherche in Rechtsprechung und Kommentierung bleiben Ihre Fachdatenbanken zuständig.</p>
+      </details>
+      <details>
+        <summary>Können Kanzleien den Digitalbonus Bayern in Anspruch nehmen?</summary>
+        <p>Nein. Der Digitalbonus richtet sich an kleine Unternehmen der gewerblichen Wirtschaft; freie Berufe sind ausdrücklich von der Förderung ausgenommen, im Grundsatz auch dann, wenn sie in gewerblicher Rechtsform ausgeübt werden. Wenn Ihnen jemand für eine Kanzlei fünfzig Prozent Digitalbonus verspricht, hat er die Richtlinie nicht gelesen. Ob andere Programme oder Finanzierungswege in Frage kommen, ist eine Frage für Ihre steuerliche Beratung.</p>
+      </details>
+      <details>
+        <summary>Wie passt das zu unserer Kanzleisoftware?</summary>
+        <p>Der Server ersetzt nichts davon. Angebunden wird lesend, über die vorhandenen Schnittstellen oder über den Zugriff auf die Dokumentenablage. Ihre Kanzleisoftware, das Dokumentenmanagement und die Fristenverwaltung bleiben führend und unverändert.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <h2>Sprechen wir über den konkreten Fall.</h2>
+      <p>Im Erstgespräch klären wir, welche Arbeiten in Ihrer Kanzlei überhaupt in Frage kommen und ob sich dafür eine eigene Maschine rechnet. Für eine Kanzlei mit drei Berufsträgern ist die Antwort nicht automatisch ja.</p>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="mailto:info@kervalt.de?subject=Erstgespr%C3%A4ch%20KI%20in%20der%20Kanzlei&amp;body=Guten%20Tag%2C%0A%0Awir%20sind%20eine%20Kanzlei%20und%20interessieren%20uns%20f%C3%BCr%20einen%20KI-Server%20in%20den%20eigenen%20R%C3%A4umen.%0A%0AKanzlei%3A%20%0AAnzahl%20Berufstr%C3%A4ger%20und%20Mitarbeitende%3A%20%0AWorum%20es%20zuerst%20gehen%20soll%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A">Erstgespräch anfragen</a>
+        <a class="btn btn-onpine" href="/">Zur Übersicht</a>
+      </div>
+      <p class="note">Kervalt, Patrik Kaiser, Traunstein. Erreichbar unter info@kervalt.de.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <nav aria-label="Fußzeile">
+      <a href="/">Start</a>
+      <a href="/ki-maschinenbau/">Maschinenbau</a>
+      <a href="/ki-praxis/">Praxen und MVZ</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </nav>
+    <p>Kervalt, Patrik Kaiser. On-Premise-KI-Server für den Mittelstand. Chiemseestraße 25b, 83278 Traunstein. <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
