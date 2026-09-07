@@ -111,6 +111,8 @@ img,svg{max-width:100%}
 .sec h3{font-weight:600;font-size:18px;margin-bottom:7px}
 .prose p{max-width:66ch;margin-bottom:14px}
 .prose p:last-child{margin-bottom:0}
+.duo{display:grid;grid-template-columns:1.4fr .6fr;gap:44px;align-items:start}
+@media (max-width:880px){.duo{grid-template-columns:1fr;gap:26px}}
 
 /* ---------- Karten ---------- */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
@@ -128,6 +130,10 @@ img,svg{max-width:100%}
 .tag{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;
   color:var(--brass-ink);white-space:nowrap;border:1px solid var(--line);
   border-radius:2px;padding:4px 9px}
+.rowitem{display:grid;grid-template-columns:200px 1fr;gap:6px 32px;
+  padding:20px 0 22px;border-bottom:1px solid var(--line)}
+.rowitem h3{color:var(--pine);font-size:17px}
+.rowitem p{font-size:15.5px;color:var(--muted);max-width:60ch}
 
 /* ---------- Tabelle ---------- */
 .tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
@@ -224,7 +230,7 @@ td.num{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:14px}
   .band-list,.cards,.split{grid-template-columns:1fr}
   .split>div+div{border-left:0;border-top:1px solid var(--line)}
   .steps{grid-template-columns:1fr 1fr}
-  .rowlink{grid-template-columns:1fr}
+  .rowlink,.rowitem{grid-template-columns:1fr}
   .tag{justify-self:start}
   .cta{padding:34px 22px;margin:40px 0}
   .sec{padding:44px 0}
