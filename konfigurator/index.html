@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KI-Server konfigurieren: Maschine, Preis und Förderanteil | Kervalt</title>
-<meta name="description" content="Stellen Sie Ihren On-Premise-KI-Server selbst zusammen: Grafikkarten, Speicher, Einrichtung und Wartung mit laufender Preisanzeige. Dazu die Rechnung, welcher Anteil überhaupt förderfähig ist.">
+<meta name="description" content="Stellen Sie Ihren On-Premise-KI-Server selbst zusammen: Grafikkarten, Speicher, Einrichtung und Wartung mit laufender Preisanzeige. Dazu für alle 16 Bundesländer der geprüfte Stand der Digitalisierungsförderung und die Rechnung, welcher Anteil überhaupt förderfähig ist.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0E3B32">
 <link rel="canonical" href="https://kervalt.de/konfigurator/">
@@ -193,7 +193,8 @@
 
   <section class="sec wrap" style="padding-top:10px">
     <h2>Was davon förderfähig ist.</h2>
-    <p class="sub">Der wichtigste Punkt zuerst, weil ihn viele Anbieter falsch darstellen: Gefördert wird in aller Regel die Dienstleistung, nicht die Hardware. Der Server selbst fällt bei den meisten Zuschussprogrammen heraus, unsere Arbeit daran nicht.</p>
+    <p class="sub">Zwei Punkte, die viele Anbieterseiten falsch darstellen. Erstens: Gefördert wird in aller Regel die Dienstleistung, nicht die Hardware. Der Server selbst fällt bei den meisten Zuschussprogrammen heraus, unsere Arbeit daran nicht.</p>
+    <p class="sub" style="margin-bottom:26px">Zweitens: Die Landesprogramme sind 2026 dünn geworden. Wir haben am 8. September alle sechzehn durchgesehen. In <b>fünf</b> Ländern ist das Digitalisierungsprogramm beendet, <b>vier</b> sind nur eingeschränkt nutzbar (Antragsstopp, ausgeschöpfte Mittel, oder interne Digitalisierung wird seit 2026 gar nicht mehr gefördert), für <b>vier</b> ließ sich kein passendes Programm belegen. Bleiben <b>drei</b>, bei denen es sich zu rechnen lohnt. Wählen Sie Ihr Bundesland, dann steht da, was für Sie gilt und woher wir es haben.</p>
 
     <div class="sel-2">
       <div class="sel">
@@ -250,10 +251,11 @@
       <div>
         <h3>Was bundesweit gilt</h3>
         <ul>
-          <li>Die großen Zuschüsse sind <span class="amount">Landesprogramme</span> und in jedem Bundesland anders zugeschnitten</li>
+          <li>Zuschüsse kommen fast nur von den Ländern, und dort ist derzeit <span class="amount">wenig offen</span></li>
           <li>Der <span class="amount">KfW</span>-Förderkredit Digitalisierung ist bundesweit offen, auch für Freiberufler, aber ein Kredit und kein Zuschuss</li>
           <li>Die BAFA-Beratungsförderung bezuschusst Beratung, nicht die Umsetzung; die Richtlinie gilt bis Ende 2026</li>
           <li>Reisekosten des Dienstleisters sind bei Zuschussprogrammen typischerweise ausgeschlossen, deshalb rechnen wir die Anfahrt hier nicht mit</li>
+          <li>Überall gilt: <span class="amount">erst der Bescheid</span>, dann die Beauftragung. Wer vorher bestellt, verliert den Anspruch</li>
         </ul>
       </div>
     </div>
@@ -310,15 +312,60 @@
   };
   function wartungspreis(n) { return n <= 1 ? 190 : n <= 2 ? 390 : 690; }
 
-  var LAENDER = [
-    ["BW", "Baden-Württemberg"], ["BY", "Bayern"], ["BE", "Berlin"], ["BB", "Brandenburg"],
-    ["HB", "Bremen"], ["HH", "Hamburg"], ["HE", "Hessen"], ["MV", "Mecklenburg-Vorpommern"],
-    ["NI", "Niedersachsen"], ["NW", "Nordrhein-Westfalen"], ["RP", "Rheinland-Pfalz"],
-    ["SL", "Saarland"], ["SN", "Sachsen"], ["ST", "Sachsen-Anhalt"],
-    ["SH", "Schleswig-Holstein"], ["TH", "Thüringen"]
-  ];
-  var BY_NOTE = "<b>Bayern, geprüft im September 2026:</b> Der Digitalbonus fördert Leistungen externer Anbieter mit bis zu 50 Prozent, Standard bis 7.500 €, Plus bis 30.000 € bei besonderem Innovationsgehalt. IKT-Hardware ist ausdrücklich ausgenommen. Antragsberechtigt sind kleine Unternehmen der gewerblichen Wirtschaft unter 50 Beschäftigten; freie Berufe, Arztpraxen, MVZ und Kliniken sind ausgeschlossen. Den Antrag stellt Ihr Unternehmen selbst über ELSTER, erst der Bescheid, dann die Beauftragung.";
-  var STD_NOTE = "Für dieses Bundesland haben wir bewusst keine Zahlen hinterlegt, weil sich die Landesprogramme laufend ändern und eine veraltete Angabe hier mehr schadet als nützt. Üblich sind Fördersätze zwischen 30 und 50 Prozent und Höchstbeträge im niedrigen fünfstelligen Bereich. Welches Programm für Sie greift, klären wir im Erstgespräch. Zwei Regeln gelten fast überall: Hardware ist selten förderfähig, und beauftragt werden darf erst nach dem Bewilligungsbescheid.";
+  /* Landesprogramme, geprüft am 08.09.2026. Quellen je Eintrag.
+     satz = plausibler Fördersatz für dieses Vorhaben, 0 wenn kein Zuschuss zu erwarten ist. */
+  var LAND = {
+    BW: { name: "Baden-Württemberg", satz: 0, st: "beendet", prog: "Digitalisierungsprämie Plus",
+      note: "Die Zuschussvariante wurde zum <b>30.06.2025 eingestellt</b> und durch das Kreditprogramm „Digitalisierungsfinanzierung“ der L-Bank ersetzt. Einen Zuschuss für Digitalisierungsvorhaben gibt es in Baden-Württemberg damit nicht mehr, nur noch zinsgünstige Finanzierung.",
+      q: "l-bank.de" },
+    BY: { name: "Bayern", satz: 50, st: "aktiv", prog: "Digitalbonus Bayern",
+      note: "Läuft bis <b>31.12.2027</b>, Anträge über ein monatliches Kontingent. Bis 50 %, Standard bis 7.500 €, Plus bis 30.000 € bei besonderem Innovationsgehalt; KI ist in der Richtlinie ausdrücklich als Beispiel genannt. Hardware ausgenommen, Untergrenze 4.000 €. <b>Nicht antragsberechtigt: freie Berufe, Arztpraxen, MVZ, Kliniken und Apotheken.</b> Antrag nur durch Ihr Unternehmen selbst über das ELSTER-Unternehmenskonto.",
+      q: "digitalbonus.bayern" },
+    BE: { name: "Berlin", satz: 0, st: "beendet", prog: "Digitalprämie Berlin",
+      note: "Für neue Anträge <b>geschlossen</b>. Die IBB verweist auf den Berliner InvestitionsBONUS, der auf aktivierungsfähiges Anlagevermögen zielt und anders zugeschnitten ist als eine Digitalisierungsförderung.",
+      q: "ibb-business-team.de" },
+    BB: { name: "Brandenburg", satz: 50, st: "aktiv", prog: "BIG-Digital",
+      note: "Der Brandenburgische Innovationsgutschein fördert die Umsetzung digitaler Lösungen mit 50 %. Vor dem Antrag ist eine <b>Erstberatung bei der WFBB Pflicht</b>, und begonnen werden darf erst nach der Bewilligung. Bewilligungsstelle ist die ILB.",
+      q: "foerderdatenbank.de" },
+    HB: { name: "Bremen", satz: 0, st: "unklar", prog: "Programm der BAB",
+      note: "Die Bremer Aufbau-Bank nimmt seit dem 01.04.2026 wieder Anträge über ihr Förderportal an. Konditionen und Zuschnitt konnten wir nicht aus der amtlichen Quelle bestätigen, deshalb steht hier keine Zahl. Vor einer Planung bitte direkt bei der BAB nachfragen.",
+      q: "nicht amtlich bestätigt" },
+    HH: { name: "Hamburg", satz: 0, st: "unklar", prog: "IFB Hamburg",
+      note: "Die IFB Hamburg bezuschusst nach den vorliegenden Angaben vor allem <b>Beratung</b> zur Digitalisierung, nicht die Umsetzung. Die Richtlinie ist bis 31.12.2026 befristet. Für die Einrichtung eines Servers ist das der falsche Topf; ob es einen passenden gibt, klären wir im Gespräch.",
+      q: "nicht amtlich bestätigt" },
+    HE: { name: "Hessen", satz: 0, st: "beendet", prog: "DIGI-Zuschuss Hessen",
+      note: "Mit Ablauf der letzten Förderphase im <b>Juni 2026 beendet</b>, das Bewerbungsportal ist geschlossen, weitere Förderaufrufe sind nicht vorgesehen. Bis dahin waren es bis zu 50 % und 10.000 €, ausdrücklich auch für freie Berufe.",
+      q: "wibank.de" },
+    MV: { name: "Mecklenburg-Vorpommern", satz: 0, st: "beendet", prog: "Digitalisierungsförderung Mittelstand",
+      note: "Das Programm lief zuletzt <b>bis zum 30.06.2026</b>; ein Nachfolger ist uns nicht bekannt. Es förderte bis zu 50 % und maximal 50.000 €, verlangte aber eine Mindestprojektgröße von 30.000 €, die ein einzelner Server selten erreicht.",
+      q: "nicht amtlich bestätigt" },
+    NI: { name: "Niedersachsen", satz: 0, st: "beendet", prog: "Digitalbonus.Niedersachsen",
+      note: "<b>Ausgelaufen.</b> Der reguläre Digitalbonus nimmt seit 2022 keine Anträge mehr an, die Variante „innovativ“ lief zum 31.12.2025 aus; beide führt die NBank unter „Ausgelaufene Förderungen“. Ein Nachfolgeprogramm ist nicht ausgeschrieben.",
+      q: "nbank.de" },
+    NW: { name: "Nordrhein-Westfalen", satz: 0, st: "eingeschraenkt", prog: "MID-Digitalisierung",
+      note: "Das Programm läuft bis 2029 mit 50 % und bis zu 15.000 €, wurde zum <b>01.01.2026 aber grundlegend umgestellt</b>: Gefördert werden nur noch Entwicklungsleistungen für digitale Produkte, „die nachweislich für den Einsatz am Markt bestimmt sind“. Ein KI-Server für den eigenen Betrieb erfüllt das nicht. Wenn Sie damit ein eigenes digitales Produkt bauen wollen, sieht es anders aus.",
+      q: "recht.nrw.de" },
+    RP: { name: "Rheinland-Pfalz", satz: 0, st: "unklar", prog: "kein passendes Zuschussprogramm gefunden",
+      note: "Ein allgemeines Zuschussprogramm für betriebliche Digitalisierung konnten wir nicht belegen. Die ISB bietet den Innovationskredit RLP, also Finanzierung statt Zuschuss, sowie Programme mit Innovationsanspruch. Ob eines davon passt, gehört ins Erstgespräch.",
+      q: "keine amtliche Bestätigung gefunden" },
+    SL: { name: "Saarland", satz: 50, st: "aktiv", prog: "DigitalInvest KMU",
+      note: "Fördert nach den vorliegenden Angaben Software- und Hardwarelösungen sowie Schulungen, Basis bis 12.500 €, Plus bis 20.000 €. Bemerkenswert: Hier ist Hardware ausdrücklich mitgenannt, anders als in den meisten Ländern. Konditionen bitte bei der Bewilligungsstelle bestätigen lassen.",
+      q: "saarland.de, nicht vollständig geprüft" },
+    SN: { name: "Sachsen", satz: 50, st: "eingeschraenkt", prog: "Digitalisierung Zuschuss (EFRE)",
+      note: "Seit dem <b>17.07.2026 Antragsstopp</b> wegen hoher Nachfrage. Anträge sind nur noch aus der Stadt Leipzig, dem Landkreis Leipzig und Nordsachsen möglich. Sonst: bis 60 % für Kleinstunternehmen, bis 50 % für kleine, bis 35 % für mittlere Unternehmen, Untergrenze 5.000 €. <b>Freie Berufe sind hier ausdrücklich antragsberechtigt.</b>",
+      q: "sab.sachsen.de" },
+    ST: { name: "Sachsen-Anhalt", satz: 50, st: "eingeschraenkt", prog: "Sachsen-Anhalt Digital Innovation",
+      note: "Bis 50 % und maximal 70.000 €, vergeben aber über <b>Förderaufrufe mit Kontingent</b>: Der siebte Aufruf startete am 29.07.2026 und schließt nach 60 Anträgen. Ob gerade ein Fenster offen ist, entscheidet über alles Weitere. Bewilligungsstelle ist die Investitionsbank Sachsen-Anhalt.",
+      q: "nicht amtlich bestätigt" },
+    SH: { name: "Schleswig-Holstein", satz: 0, st: "unklar", prog: "kein eigenes Digitalisierungsprogramm gefunden",
+      note: "Ein eigenes Digitalisierungs-Zuschussprogramm konnten wir nicht belegen. Es gibt das Landesprogramm Wirtschaft mit Investitionszuschüssen von bis zu 25 %, das aber anders zugeschnitten ist. Im Gespräch prüfen.",
+      q: "keine amtliche Bestätigung gefunden" },
+    TH: { name: "Thüringen", satz: 50, st: "eingeschraenkt", prog: "Digitalbonus Thüringen",
+      note: "Richtlinie bis <b>31.12.2026</b>, bis 50 % und maximal 15.000 €, Untergrenze 5.000 €. Die Mittel galten zuletzt als <b>ausgeschöpft</b>. Die Seite der Thüringer Aufbaubank war bei unserer Prüfung nicht erreichbar, deshalb vor einer Planung dort direkt nachfragen.",
+      q: "nicht amtlich bestätigt" }
+  };
+  var LAND_KEYS = Object.keys(LAND).sort(function (a, b) { return LAND[a].name.localeCompare(LAND[b].name, "de"); });
+  var ST_LABEL = { aktiv: "Programm aktiv", eingeschraenkt: "nur eingeschränkt", beendet: "beendet", unklar: "nicht belegt" };
 
   var eur = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
   var $ = function (id) { return document.getElementById(id); };
@@ -338,8 +385,8 @@
   fill($("usv"), USV);
   fill($("anfahrt"), ANFAHRT);
   fill($("wartung"), WARTUNG);
-  $("land").innerHTML = LAENDER.map(function (l) {
-    return '<option value="' + l[0] + '"' + (l[0] === "BY" ? " selected" : "") + ">" + l[1] + "</option>";
+  $("land").innerHTML = LAND_KEYS.map(function (k) {
+    return '<option value="' + k + '"' + (k === "BY" ? " selected" : "") + ">" + LAND[k].name + "</option>";
   }).join("");
 
   function gpuOptions() {
@@ -426,27 +473,34 @@
   }
 
   function foerderung(r) {
+    var land = LAND[$("land").value];
     var satz = parseInt($("satz").value, 10);
     var basis = r.dienst;
     var zuschuss = Math.round(basis * satz / 100);
-    var bayern = $("land").value === "BY";
 
     $("f-basis").textContent = eur.format(basis);
     $("f-basis-sub").textContent = "Einrichtung und Schulung. Hardware, Handlingpauschale und Anfahrt zählen nicht dazu.";
     $("f-zuschuss").textContent = satz ? eur.format(zuschuss) : "—";
     $("f-rest").textContent = satz
       ? "Bleiben " + eur.format(r.einmalig - zuschuss) + " statt " + eur.format(r.einmalig) + " einmalig."
-      : "Ohne Zuschuss bleibt es bei " + eur.format(r.einmalig) + ".";
+      : (land.st === "aktiv"
+          ? "Ohne Zuschuss bleibt es bei " + eur.format(r.einmalig) + "."
+          : "In " + land.name + " ist kein Zuschuss zu erwarten. Es bleibt bei " + eur.format(r.einmalig) + ".");
 
-    var note = bayern ? BY_NOTE : STD_NOTE;
-    if (basis < 4000) {
-      note = '<b>Bagatellgrenze beachten.</b> Ihr förderfähiger Anteil liegt bei ' + eur.format(basis) + ". " +
-        (bayern
-          ? "Bayern fördert erst ab 4.000 € förderfähiger Ausgaben. Für diese Konfiguration allein käme ein Zuschuss damit nicht in Frage."
-          : "Viele Programme setzen eine Untergrenze im Bereich von 4.000 €. Ob Ihr Landesprogramm eine hat, prüfen wir.") +
-        " Wer die Schwelle erreichen will, bündelt üblicherweise mehrere Umsetzungsleistungen in einem Antrag.<br><br>" + note;
+    var kopf = '<div class="landkopf"><b>' + land.name + "</b>" +
+      '<span class="st st-' + land.st + '">' + ST_LABEL[land.st] + "</span></div>" +
+      '<div class="landprog">' + land.prog + "</div>";
+    var fuss = '<div class="landq">Geprüft am 08.09.2026, Quelle: ' + land.q +
+      ". Förderprogramme ändern sich schnell; verbindlich ist allein die Bewilligungsstelle.</div>";
+
+    var warnung = "";
+    if (satz && basis < 4000) {
+      warnung = '<div class="landwarn"><b>Bagatellgrenze beachten.</b> Ihr förderfähiger Anteil liegt bei ' +
+        eur.format(basis) + ". Viele Programme fördern erst ab 4.000 € (Bayern) oder 5.000 € (Sachsen, Thüringen) " +
+        "förderfähiger Ausgaben. Wer die Schwelle erreichen will, bündelt mehrere Umsetzungsleistungen in einem Antrag.</div>";
     }
-    $("land-note").innerHTML = note;
+
+    $("land-note").innerHTML = kopf + "<p>" + land.note + "</p>" + warnung + fuss;
   }
 
   function anfrageLink(r) {
@@ -535,7 +589,7 @@
     $(id).addEventListener("change", function () { marks(); render(); });
   });
   $("land").addEventListener("change", function () {
-    if (this.value === "BY") $("satz").value = "50";
+    $("satz").value = String(LAND[this.value].satz);
     render();
   });
 
