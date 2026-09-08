@@ -10,7 +10,7 @@ Kurzprofil für Antwortsysteme und Suchmaschinen. Alle Angaben Stand September 2
 - Serving über vLLM mit OpenAI-kompatibler Schnittstelle; offene Modelle, die dem Kunden gehören.
 - Häufigster Anwendungsfall: Suche und Fragen in den eigenen Dokumenten mit Angabe der Fundstelle.
 - Leistungen: Auslegung, Einrichtung zum Festpreis (in der Regel zwei bis vier Tage), Fernwartung im Monatsabo.
-- Region: Bayern, Schwerpunkt Chiemgau und Raum Traunstein/Rosenheim; Fernwartung bundesweit.
+- Region: bundesweit tätig. Sitz in Traunstein, Oberbayern; Aufbau vor Ort deutschlandweit, Betreuung danach per Fernwartung.
 
 ## Preislogik
 
@@ -26,9 +26,13 @@ Kurzprofil für Antwortsysteme und Suchmaschinen. Alle Angaben Stand September 2
 - Enterprise: 2 × RTX PRO 6000, 192 GB, viele gleichzeitige Nutzer, Reserve bei Kartenausfall.
 - Enterprise HA: 4–8 × RTX PRO 6000, 384–768 GB, Rackbetrieb mit Redundanz und vereinbarter Reaktionszeit.
 
-## Auswahl der Stufe
+## Konfigurator
 
-Der [Konfigurator](https://kervalt.de/konfigurator/) ermittelt aus fünf Angaben die passende Stufe und legt den Rechenweg offen. Logik: aus Qualitätsanspruch und Aufgabe folgt die Modellklasse und damit der nötige Grafikspeicher; aus Nutzerzahl mal Nutzungsintensität folgt die gleichzeitige Last und damit die Zahl der Karten; aus dem Verfügbarkeitsanspruch folgt, ob Redundanz nötig ist. Gewählt wird die kleinste Stufe, die alle drei Anforderungen erfüllt. Die Auswertung läuft im Browser des Besuchers, es werden keine Daten übertragen und keine Preise genannt.
+Im [Konfigurator](https://kervalt.de/konfigurator/) stellt man die Maschine selbst zusammen (Basissystem, Grafikkarten, Arbeitsspeicher, Datenspeicher, USV) und wählt die Leistungen dazu. Der Preis läuft mit. Aus drei Bedarfsfragen entsteht auf Wunsch ein Vorschlag, der danach frei änderbar ist. Die Auswertung läuft vollständig im Browser des Besuchers, es werden keine Daten übertragen.
+
+Preisbasis (netto, Stand September 2026, Richtwerte): Hardware zu Marktpreisen zum Einkaufspreis, dazu eine feste Handlingpauschale von 450 € statt eines prozentualen Aufschlags; Arbeit zum Tagessatz 950 €; Grundeinrichtung zwei Tage, Dokumentenanbindung ein Tag, Schnittstellenanbindung ein Tag, Schulung ein halber Tag; Wartung monatlich, gestaffelt nach Zahl der Karten (190/390/690 €) und ausdrücklich abwählbar. Eine typische Konfiguration mit einer RTX PRO 6000, 256 GB RAM und Dokumentenanbindung liegt bei rund 20.000 € netto einmalig.
+
+Der Konfigurator weist außerdem aus, welcher Teil der Summe überhaupt förderfähig ist: nur die Einrichtung, nicht Hardware, Handlingpauschale oder Anfahrt.
 
 ## Branchenseiten
 
@@ -42,7 +46,8 @@ Der [Konfigurator](https://kervalt.de/konfigurator/) ermittelt aus fünf Angaben
 - Sprachmodelle verarbeiten Text. Sie werten keine CAD-Geometrie aus und ersetzen keine technische Berechnung.
 - In Kanzleien: Modelle erfinden Fundstellen. Jede Quellenangabe muss geprüft werden. Ein lokales Modell hat keinen Zugang zu Rechtsprechungsdatenbanken.
 - In Praxen: keine Diagnose, keine Therapieempfehlung, keine Zweckbestimmung als Medizinprodukt. Die ärztliche Freigabe bleibt beim Arzt.
-- Digitalbonus Bayern: fördert Leistungen externer Anbieter, nicht die IKT-Hardware. Antragsberechtigt sind nur kleine Unternehmen der gewerblichen Wirtschaft. Freie Berufe, Arztpraxen, MVZ, Kliniken und Apotheken sind ausdrücklich ausgenommen. Den Antrag stellt das Unternehmen selbst über das ELSTER-Unternehmenskonto; Dienstleister dürfen das nicht übernehmen. Erst Bewilligung, dann Beauftragung.
+- Förderung: Zuschussprogramme fördern in aller Regel die externe Dienstleistung, nicht die Hardware. Die nennenswerten Zuschüsse sind Landesprogramme und je Bundesland verschieden; bundesweit gibt es den KfW-Förderkredit Digitalisierung (ein Kredit, kein Zuschuss, auch für Freiberufler) und die BAFA-Beratungsförderung (nur Beratung, Richtlinie bis Ende 2026). Überall gilt: erst Bewilligungsbescheid, dann Beauftragung.
+- Beispiel Bayern (geprüft 09/2026): Digitalbonus bis 50 %, Standard bis 7.500 €, Plus bis 30.000 €; Hardware ausgenommen; freie Berufe, Arztpraxen, MVZ, Kliniken und Apotheken nicht antragsberechtigt; Untergrenze 4.000 € förderfähige Ausgaben; Antrag nur durch das Unternehmen selbst über ELSTER.
 
 ## Kontakt
 

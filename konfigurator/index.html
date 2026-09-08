@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Welche Appliance passt? Konfigurator für Ihren KI-Server | Kervalt</title>
-<meta name="description" content="In fünf Fragen zur passenden Appliance: Nutzerzahl, Intensität, Qualitätsanspruch und Verfügbarkeit ergeben die kleinste Maschine, die für Ihren Betrieb reicht. Mit nachvollziehbarer Herleitung.">
+<title>KI-Server konfigurieren: Maschine, Preis und Förderanteil | Kervalt</title>
+<meta name="description" content="Stellen Sie Ihren On-Premise-KI-Server selbst zusammen: Grafikkarten, Speicher, Einrichtung und Wartung mit laufender Preisanzeige. Dazu die Rechnung, welcher Anteil überhaupt förderfähig ist.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0E3B32">
 <link rel="canonical" href="https://kervalt.de/konfigurator/">
@@ -14,8 +14,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Kervalt">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Welche Appliance passt? Konfigurator für Ihren KI-Server">
-<meta property="og:description" content="Fünf Fragen, eine Empfehlung, offengelegte Herleitung. Gewählt wird die kleinste Maschine, die reicht.">
+<meta property="og:title" content="KI-Server konfigurieren: Maschine, Preis und Förderanteil">
+<meta property="og:description" content="Maschine zusammenstellen, Preis mitlaufen lassen, Förderanteil ausrechnen. Ohne Anmeldung, ohne Datenübertragung.">
 <meta property="og:url" content="https://kervalt.de/konfigurator/">
 <meta property="og:image" content="https://kervalt.de/assets/og-konfigurator.png">
 <meta property="og:image:width" content="1200">
@@ -30,8 +30,8 @@
       "@type": "WebPage",
       "@id": "https://kervalt.de/konfigurator/",
       "url": "https://kervalt.de/konfigurator/",
-      "name": "Konfigurator für On-Premise-KI-Appliances",
-      "description": "Ermittelt aus Nutzerzahl, Nutzungsintensität, Qualitätsanspruch und Verfügbarkeitsanspruch die passende Appliance-Stufe.",
+      "name": "Konfigurator für On-Premise-KI-Server",
+      "description": "Zusammenstellung eines KI-Servers mit laufender Preisberechnung und Ermittlung des förderfähigen Anteils.",
       "isPartOf": {"@id": "https://kervalt.de/#website"},
       "about": {"@id": "https://kervalt.de/#service"},
       "inLanguage": "de-DE"
@@ -65,105 +65,199 @@
 
 <main id="inhalt">
 
-  <section class="sec wrap" style="padding-bottom:0">
+  <section class="sec wrap" style="padding-bottom:6px">
     <span class="kicker">Konfigurator</span>
-    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(29px,4.4vw,42px);line-height:1.08;letter-spacing:-.022em;margin-bottom:16px">Welche Maschine reicht für Ihren Betrieb?</h1>
-    <p class="lead" style="max-width:62ch">Fünf Fragen. Danach steht da, welche Stufe passt und woraus sich das ergibt. Der Rechenweg ist offengelegt, damit Sie ihn prüfen können, statt einer Zahl glauben zu müssen.</p>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(29px,4.4vw,42px);line-height:1.08;letter-spacing:-.022em;margin-bottom:16px">Stellen Sie sich die Maschine zusammen.</h1>
+    <p class="lead" style="max-width:64ch">Drei Fragen zum Bedarf ergeben einen Vorschlag. Den können Sie danach in jedem Punkt ändern, der Preis läuft mit. Am Ende steht, welcher Teil der Summe überhaupt förderfähig ist und was das ausmacht.</p>
     <noscript>
-      <p class="hint" style="margin-top:22px;border-left:3px solid var(--brass);padding-left:14px">Für die Auswertung wird JavaScript gebraucht. Ohne das hilft die <a href="/#appliances">Übersicht der vier Stufen</a> weiter, oder Sie schreiben uns kurz an <a href="mailto:info@kervalt.de">info@kervalt.de</a>, dann klären wir es im Gespräch.</p>
+      <p class="hint" style="margin-top:22px;border-left:3px solid var(--brass);padding-left:14px">Für die Berechnung wird JavaScript gebraucht. Ohne das hilft die <a href="/#appliances">Übersicht der Stufen</a> weiter, oder Sie schreiben uns an <a href="mailto:info@kervalt.de">info@kervalt.de</a>.</p>
     </noscript>
   </section>
 
-  <section class="sec wrap" style="padding-top:30px">
-    <form id="cfg" novalidate>
-      <div class="cfg">
+  <section class="sec wrap" style="padding-top:26px">
+    <div class="build">
 
-        <fieldset class="q">
-          <legend><span class="qnum">Frage 01</span>Wie viele Menschen würden damit arbeiten?</legend>
-          <p class="qhint">Gemeint sind die Personen, die das System tatsächlich benutzen, nicht die Belegschaft insgesamt.</p>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="users" value="a"><span><b>1 bis 5</b><small>Eine Handvoll Leute, oft eine einzelne Abteilung</small></span></label>
-            <label class="opt"><input type="radio" name="users" value="b"><span><b>6 bis 20</b><small>Ein Team oder mehrere kleine Abteilungen</small></span></label>
-            <label class="opt"><input type="radio" name="users" value="c"><span><b>21 bis 60</b><small>Ein größerer Teil des Betriebs</small></span></label>
-            <label class="opt"><input type="radio" name="users" value="d"><span><b>Mehr als 60</b><small>Betriebsweiter Einsatz</small></span></label>
-          </div>
-        </fieldset>
+      <div>
+        <form id="cfg">
 
-        <fieldset class="q">
-          <legend><span class="qnum">Frage 02</span>Wie oft würde jemand das System benutzen?</legend>
-          <p class="qhint">Daraus ergibt sich, wie viele Anfragen gleichzeitig auflaufen. Das bestimmt die Zahl der Grafikkarten stärker als die Nutzerzahl allein.</p>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="intens" value="a"><span><b>Gelegentlich</b><small>Ein paar Mal am Tag, wenn gerade etwas ansteht</small></span></label>
-            <label class="opt"><input type="radio" name="intens" value="b"><span><b>Regelmäßig</b><small>Mehrmals pro Stunde, fester Teil einzelner Aufgaben</small></span></label>
-            <label class="opt"><input type="radio" name="intens" value="c"><span><b>Dauerhaft</b><small>Läuft im Arbeitsablauf ständig mit</small></span></label>
-          </div>
-        </fieldset>
+          <fieldset class="q">
+            <legend><span class="qnum">Schritt 01</span>Ihr Bedarf</legend>
+            <p class="qhint">Daraus schlagen wir eine Maschine vor. Ändern können Sie danach alles.</p>
+            <div class="sel-2">
+              <div class="sel">
+                <label for="users">Wie viele Personen arbeiten damit?</label>
+                <select id="users">
+                  <option value="a">1 bis 5</option>
+                  <option value="b" selected>6 bis 20</option>
+                  <option value="c">21 bis 60</option>
+                  <option value="d">mehr als 60</option>
+                </select>
+              </div>
+              <div class="sel">
+                <label for="intens">Wie oft?</label>
+                <select id="intens">
+                  <option value="a">gelegentlich, ein paar Mal am Tag</option>
+                  <option value="b" selected>regelmäßig, mehrmals pro Stunde</option>
+                  <option value="c">dauerhaft, im Arbeitsablauf</option>
+                </select>
+              </div>
+            </div>
+            <div class="sel">
+              <label for="qual">Wie gut müssen die Antworten sein?</label>
+              <select id="qual">
+                <option value="a">Solide Hilfe: zusammenfassen, umformulieren, sortieren</option>
+                <option value="b" selected>Fachlich belastbar: Fachtexte, verlässliche Quellenangabe</option>
+                <option value="c">Anspruchsvoll: schwierige Fachsprache, mehrsprachig, hohe Genauigkeit</option>
+              </select>
+              <small>Bestimmt die Modellgröße und damit den nötigen Grafikspeicher.</small>
+            </div>
+            <div class="cfg-go">
+              <button class="btn btn-ghost" type="button" id="vorschlag">Vorschlag übernehmen</button>
+              <span class="miss" id="vorschlag-info"></span>
+            </div>
+          </fieldset>
 
-        <fieldset class="q">
-          <legend><span class="qnum">Frage 03</span>Wie gut müssen die Antworten sein?</legend>
-          <p class="qhint">Die ehrliche Antwort ist selten „so gut wie möglich“. Ein größeres Modell kostet Grafikspeicher und damit Geld, das sich nur lohnt, wenn die Aufgabe es verlangt.</p>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="qual" value="a"><span><b>Solide Hilfe</b><small>Zusammenfassen, umformulieren, sortieren. Nacharbeit ist eingeplant</small></span></label>
-            <label class="opt"><input type="radio" name="qual" value="b"><span><b>Fachlich belastbar</b><small>Fachtexte, verlässliche Quellenangabe, wenig Nacharbeit</small></span></label>
-            <label class="opt"><input type="radio" name="qual" value="c"><span><b>Anspruchsvoll</b><small>Schwierige Fachsprache, mehrsprachig, hohe Genauigkeit</small></span></label>
-          </div>
-        </fieldset>
+          <fieldset class="q" style="margin-top:18px">
+            <legend><span class="qnum">Schritt 02</span>Die Maschine</legend>
+            <p class="qhint">Der Grafikspeicher entscheidet, welche Modelle laufen. Die Zahl der Karten entscheidet, wie viele Anfragen gleichzeitig bedient werden.</p>
+            <div class="sel">
+              <label for="basis">Basissystem</label>
+              <select id="basis"></select>
+              <small id="basis-hint"></small>
+            </div>
+            <div class="sel-2">
+              <div class="sel">
+                <label for="gpu">Grafikkarte</label>
+                <select id="gpu"></select>
+              </div>
+              <div class="sel">
+                <label for="gpuN">Anzahl Karten</label>
+                <select id="gpuN"></select>
+              </div>
+            </div>
+            <div class="sel-2">
+              <div class="sel">
+                <label for="ram">Arbeitsspeicher</label>
+                <select id="ram"></select>
+              </div>
+              <div class="sel">
+                <label for="disk">Speicher für Ihre Dokumente</label>
+                <select id="disk"></select>
+              </div>
+            </div>
+            <div class="sel">
+              <label for="usv">Unterbrechungsfreie Stromversorgung</label>
+              <select id="usv"></select>
+              <small>Fängt kurze Stromausfälle ab und fährt die Maschine sauber herunter.</small>
+            </div>
+            <div id="flags"></div>
+          </fieldset>
 
-        <fieldset class="q">
-          <legend><span class="qnum">Frage 04</span>Was soll das System hauptsächlich tun?</legend>
-          <p class="qhint">Mehrere Aufgabenarten gleichzeitig heißt oft, dass mehr als ein Modell im Speicher liegen muss.</p>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="zweck" value="rag"><span><b>Fragen an die eigenen Dokumente</b><small>Der häufigste Fall: suchen und mit Fundstelle antworten</small></span></label>
-            <label class="opt"><input type="radio" name="zweck" value="text"><span><b>Texte und Entwürfe schreiben</b><small>Angebote, Briefe, Berichte, Übersetzungen</small></span></label>
-            <label class="opt"><input type="radio" name="zweck" value="extrakt"><span><b>Formulare und Belege auslesen</b><small>Rechnungen, Protokolle, Bögen strukturiert erfassen</small></span></label>
-            <label class="opt"><input type="radio" name="zweck" value="mix"><span><b>Mehreres davon parallel</b><small>Verschiedene Abteilungen mit verschiedenen Aufgaben</small></span></label>
-          </div>
-        </fieldset>
+          <fieldset class="q" style="margin-top:18px">
+            <legend><span class="qnum">Schritt 03</span>Was wir dafür tun</legend>
+            <p class="qhint">Die Grundeinrichtung ist immer dabei: Maschine aufstellen, Modelle einrichten, Zugriffsrechte setzen, Übergabe. Gerechnet wird mit einem Tagessatz von 950 € netto.</p>
+            <div class="opts">
+              <label class="opt on"><input type="checkbox" id="l-grund" checked disabled><span><b>Grundeinrichtung, 2 Tage</b><small>Aufbau, Modelle, Rechte, Übergabe. Nicht abwählbar</small></span></label>
+              <label class="opt"><input type="checkbox" id="l-rag" checked><span><b>Dokumentenanbindung, 1 Tag</b><small>Ihre Ablage wird durchsuchbar, Antworten kommen mit Fundstelle</small></span></label>
+              <label class="opt"><input type="checkbox" id="l-schnitt"><span><b>Anbindung an ERP, DMS oder Fachanwendung, 1 Tag</b><small>Lesender Zugriff über vorhandene Schnittstellen</small></span></label>
+              <label class="opt"><input type="checkbox" id="l-schulung" checked><span><b>Schulung vor Ort, ein halber Tag</b><small>Einweisung des Teams, inklusive der Fallstricke</small></span></label>
+            </div>
+            <div class="sel-2" style="margin-top:18px">
+              <div class="sel">
+                <label for="anfahrt">Entfernung zu Ihnen</label>
+                <select id="anfahrt"></select>
+                <small>Sitz ist Traunstein, aufgebaut wird bundesweit.</small>
+              </div>
+              <div class="sel">
+                <label for="wartung">Wartung per Fernzugriff</label>
+                <select id="wartung"></select>
+                <small>Monatlich, jederzeit kündbar, ausdrücklich abwählbar.</small>
+              </div>
+            </div>
+          </fieldset>
 
-        <fieldset class="q">
-          <legend><span class="qnum">Frage 05</span>Was passiert, wenn die Maschine ausfällt?</legend>
-          <p class="qhint">Redundanz kostet eine zweite Karte. Sie lohnt sich nur, wenn Stillstand teurer ist als das Ersatzteil.</p>
-          <div class="opts">
-            <label class="opt"><input type="radio" name="avail" value="a"><span><b>Wäre verschmerzbar</b><small>Ein paar Tage ohne das System sind unangenehm, aber machbar</small></span></label>
-            <label class="opt"><input type="radio" name="avail" value="b"><span><b>Sollte schnell wieder laufen</b><small>Am nächsten Werktag wieder verfügbar, sonst wird es eng</small></span></label>
-            <label class="opt"><input type="radio" name="avail" value="c"><span><b>Darf nicht stillstehen</b><small>Stillstand kostet sofort Geld oder blockiert Abläufe</small></span></label>
-          </div>
-        </fieldset>
-
+        </form>
       </div>
 
-      <div class="cfg-go">
-        <button class="btn btn-primary" type="submit">Empfehlung anzeigen</button>
-        <span class="miss" id="cfg-miss"></span>
+      <div class="build-col">
+        <div class="sum" id="sum">
+          <div class="sum-hd"><span class="led" aria-hidden="true"></span><span id="sum-title">Ihre Konfiguration</span></div>
+          <div class="sum-body" id="sum-body"></div>
+          <div class="sum-total" id="sum-total"></div>
+          <div class="sum-note">Alle Preise netto zzgl. Umsatzsteuer. Richtwerte nach Marktpreisen im September 2026. Hardware geben wir zum Einkaufspreis weiter, der Beleg des Lieferanten liegt bei. Ein Angebot halten wir 14 Tage gültig, weil GPU-Preise derzeit stark schwanken.</div>
+        </div>
       </div>
-    </form>
 
-    <div id="cfg-result" hidden aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" style="padding-top:10px">
+    <h2>Was davon förderfähig ist.</h2>
+    <p class="sub">Der wichtigste Punkt zuerst, weil ihn viele Anbieter falsch darstellen: Gefördert wird in aller Regel die Dienstleistung, nicht die Hardware. Der Server selbst fällt bei den meisten Zuschussprogrammen heraus, unsere Arbeit daran nicht.</p>
+
+    <div class="sel-2">
+      <div class="sel">
+        <label for="land">Ihr Bundesland</label>
+        <select id="land"></select>
+      </div>
+      <div class="sel">
+        <label for="satz">Angenommener Fördersatz</label>
+        <select id="satz">
+          <option value="0">kein Zuschuss</option>
+          <option value="30">30 %</option>
+          <option value="40">40 %</option>
+          <option value="50" selected>50 %</option>
+        </select>
+        <small>Die Höchstbeträge der Landesprogramme liegen meist zwischen 7.500 und 30.000 €. Bei einem Projekt dieser Größe greifen sie nicht: Begrenzend ist der Fördersatz auf den Dienstleistungsanteil, deshalb steht hier kein Regler dafür.</small>
+      </div>
+    </div>
+
+    <div id="land-note" class="flag"></div>
+
+    <div class="foerder-out">
+      <div>
+        <div class="k">Förderfähiger Anteil Ihrer Konfiguration</div>
+        <div class="z" id="f-basis">—</div>
+        <div class="k" id="f-basis-sub" style="margin-top:6px"></div>
+      </div>
+      <div>
+        <div class="k">Möglicher Zuschuss im Rechenbeispiel</div>
+        <div class="z" id="f-zuschuss">—</div>
+        <div class="k" id="f-rest" style="margin-top:6px"></div>
+      </div>
+    </div>
+
+    <p class="hint" style="margin-top:16px">Rechenbeispiel auf Grundlage der von Ihnen gewählten Annahmen, keine Förderzusage. Zuschüsse sind freiwillige Leistungen ohne Rechtsanspruch, die Programme unterscheiden sich je Bundesland und ändern sich laufend. Verbindlich ist allein die Auskunft der Bewilligungsstelle. Wir leisten keine Förder-, Rechts- oder Steuerberatung.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" id="anfrage" href="mailto:info@kervalt.de">Angebot zu dieser Konfiguration anfragen</a>
+      <a class="btn btn-ghost" href="/#appliances">Stufen im Überblick</a>
+    </div>
   </section>
 
   <section class="sec wrap">
-    <h2>Wie diese Empfehlung zustande kommt.</h2>
-    <p class="sub">Damit klar ist, was der Konfigurator kann und was nicht.</p>
+    <h2>Womit hier gerechnet wird.</h2>
     <div class="split">
       <div>
-        <h3>Was hier gerechnet wird</h3>
+        <h3>Woher die Zahlen kommen</h3>
         <ul>
-          <li>Aus Qualitätsanspruch und Aufgabe ergibt sich die <span class="amount">Modellklasse</span> und damit der nötige Grafikspeicher</li>
-          <li>Aus Nutzerzahl mal Intensität ergibt sich die gleichzeitige Last und damit die Zahl der Karten</li>
-          <li>Aus dem Verfügbarkeitsanspruch ergibt sich, ob Redundanz nötig ist</li>
-          <li>Gewählt wird die <span class="amount">kleinste</span> Stufe, die alle drei Anforderungen erfüllt</li>
+          <li>Hardware nach Marktpreisen im <span class="amount">September 2026</span>, netto, zum Einkaufspreis weitergegeben</li>
+          <li>Dazu eine feste Handlingpauschale von <span class="amount">450 €</span> für Beschaffung und Aufbau, kein prozentualer Aufschlag</li>
+          <li>Arbeit zum Tagessatz <span class="amount">950 €</span> netto, als Festpreis im Angebot</li>
+          <li>Wartung monatlich und kündbar, gestaffelt nach Anzahl der Karten</li>
         </ul>
       </div>
       <div>
-        <h3>Was hier nicht passiert</h3>
+        <h3>Was bundesweit gilt</h3>
         <ul>
-          <li>Es wird kein Preis genannt. GPU-Preise schwanken derzeit wöchentlich, eine Zahl auf dieser Seite wäre morgen falsch</li>
-          <li>Es werden keine Daten übertragen. Die Auswertung läuft in Ihrem Browser, wir erfahren davon nichts</li>
-          <li>Es ersetzt kein Gespräch. Vier Stufen bilden nicht jeden Sonderfall ab</li>
-          <li>Angebote halten wir <span class="amount">14 Tage</span> gültig, aus demselben Grund</li>
+          <li>Die großen Zuschüsse sind <span class="amount">Landesprogramme</span> und in jedem Bundesland anders zugeschnitten</li>
+          <li>Der <span class="amount">KfW</span>-Förderkredit Digitalisierung ist bundesweit offen, auch für Freiberufler, aber ein Kredit und kein Zuschuss</li>
+          <li>Die BAFA-Beratungsförderung bezuschusst Beratung, nicht die Umsetzung; die Richtlinie gilt bis Ende 2026</li>
+          <li>Reisekosten des Dienstleisters sind bei Zuschussprogrammen typischerweise ausgeschlossen, deshalb rechnen wir die Anfahrt hier nicht mit</li>
         </ul>
       </div>
     </div>
+    <p class="hint" style="margin-top:18px">Die Auswertung läuft vollständig in Ihrem Browser. Es wird nichts übertragen und nichts gespeichert, wir erfahren von Ihrer Konfiguration nur, wenn Sie uns schreiben.</p>
   </section>
 
 </main>
@@ -178,7 +272,7 @@
       <a href="/impressum/">Impressum</a>
       <a href="/datenschutz/">Datenschutz</a>
     </nav>
-    <p>Kervalt, Patrik Kaiser. On-Premise-KI-Server für den Mittelstand. Chiemseestraße 25b, 83278 Traunstein. <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
+    <p>Kervalt, Patrik Kaiser. On-Premise-KI-Server für den Mittelstand, bundesweit. Chiemseestraße 25b, 83278 Traunstein. <a href="mailto:info@kervalt.de">info@kervalt.de</a></p>
   </div>
 </footer>
 
@@ -186,199 +280,272 @@
 (function () {
   "use strict";
 
-  var USERS = {
-    a: { w: 1, label: "1 bis 5 Personen" },
-    b: { w: 2, label: "6 bis 20 Personen" },
-    c: { w: 3, label: "21 bis 60 Personen" },
-    d: { w: 4, label: "mehr als 60 Personen" }
-  };
-  var INTENS = {
-    a: { w: 1, label: "gelegentlich" },
-    b: { w: 2, label: "regelmäßig" },
-    c: { w: 3, label: "dauerhaft" }
-  };
-  var QUAL = {
-    a: { tier: 0, label: "solide Hilfe", modell: "kompakte Modelle mit 7 bis 14 Milliarden Parametern", vram: "32 GB" },
-    b: { tier: 1, label: "fachlich belastbar", modell: "Modelle bis etwa 40 bis 70 Milliarden Parameter", vram: "96 GB" },
-    c: { tier: 2, label: "anspruchsvoll", modell: "Modelle ab 70 Milliarden Parametern", vram: "192 GB" }
-  };
-  var ZWECK = {
-    rag: { bump: 0, label: "Fragen an die eigenen Dokumente" },
-    text: { bump: 0, label: "Texte und Entwürfe schreiben" },
-    extrakt: { bump: 0, label: "Formulare und Belege auslesen" },
-    mix: { bump: 1, label: "mehreres davon parallel" }
-  };
-  var AVAIL = {
-    a: { min: 0, label: "Ausfall wäre verschmerzbar" },
-    b: { min: 1, label: "sollte am nächsten Werktag wieder laufen" },
-    c: { min: 2, label: "darf nicht stillstehen" }
-  };
+  /* ---- Preisbasis. Alle Beträge netto in Euro, Stand September 2026. ---- */
+  var TAGESSATZ = 950;
+  var HANDLING = 450;
 
-  var TIERS = [
-    { name: "Kompakt", gpu: "1 × RTX 5090", vram: "32 GB", klasse: "7–14 B", karten: "eine Karte" },
-    { name: "Professional", gpu: "1 × RTX PRO 6000 Blackwell", vram: "96 GB", klasse: "bis 40–70 B", karten: "eine Karte" },
-    { name: "Enterprise", gpu: "2 × RTX PRO 6000", vram: "192 GB", klasse: "70 B und größer", karten: "zwei Karten" },
-    { name: "Enterprise HA", gpu: "4–8 × RTX PRO 6000", vram: "384–768 GB", klasse: "mehrere Modelle parallel", karten: "Rack mit Redundanz" }
+  var BASIS = {
+    tower:  { label: "Tower-Workstation, ein Steckplatz", max: 1, preis: 2900,
+              hint: "Einzelnes Netzteil, läuft in einem abschließbaren Technikraum." },
+    server: { label: "Server, zwei Steckplätze", max: 2, preis: 5400,
+              hint: "Redundantes Netzteil. Als Standgehäuse oder für den Schrank." },
+    rack:   { label: "Rack-Server 4 HE, bis acht Karten", max: 8, preis: 12500,
+              hint: "Redundante Netzteile, Hot-Swap-Laufwerke, Serverschrank nötig." }
+  };
+  var GPU = {
+    r5090: { label: "RTX 5090, 32 GB", vram: 32, preis: 4200 },
+    rpro:  { label: "RTX PRO 6000 Blackwell, 96 GB", vram: 96, preis: 11400 }
+  };
+  var RAM = { "128": { label: "128 GB", preis: 0 }, "256": { label: "256 GB", preis: 750 }, "512": { label: "512 GB", preis: 1900 } };
+  var DISK = { "2": { label: "2 TB NVMe", preis: 0 }, "4": { label: "4 TB NVMe", preis: 380 }, "8": { label: "8 TB NVMe", preis: 950 }, "16": { label: "16 TB NVMe", preis: 1900 } };
+  var USV = { keine: { label: "keine", preis: 0 }, klein: { label: "1500 VA, Standgerät", preis: 650 }, rack: { label: "3000 VA, für den Schrank", preis: 1400 } };
+  var ANFAHRT = {
+    nah:    { label: "bis 150 km ab Traunstein", preis: 0 },
+    mittel: { label: "150 bis 400 km", preis: 390 },
+    fern:   { label: "über 400 km, mit Übernachtung", preis: 780 }
+  };
+  var WARTUNG = {
+    keine: { label: "keine Wartung", preis: 0 },
+    auto:  { label: "Wartung passend zur Maschine", preis: null }
+  };
+  function wartungspreis(n) { return n <= 1 ? 190 : n <= 2 ? 390 : 690; }
+
+  var LAENDER = [
+    ["BW", "Baden-Württemberg"], ["BY", "Bayern"], ["BE", "Berlin"], ["BB", "Brandenburg"],
+    ["HB", "Bremen"], ["HH", "Hamburg"], ["HE", "Hessen"], ["MV", "Mecklenburg-Vorpommern"],
+    ["NI", "Niedersachsen"], ["NW", "Nordrhein-Westfalen"], ["RP", "Rheinland-Pfalz"],
+    ["SL", "Saarland"], ["SN", "Sachsen"], ["ST", "Sachsen-Anhalt"],
+    ["SH", "Schleswig-Holstein"], ["TH", "Thüringen"]
   ];
+  var BY_NOTE = "<b>Bayern, geprüft im September 2026:</b> Der Digitalbonus fördert Leistungen externer Anbieter mit bis zu 50 Prozent, Standard bis 7.500 €, Plus bis 30.000 € bei besonderem Innovationsgehalt. IKT-Hardware ist ausdrücklich ausgenommen. Antragsberechtigt sind kleine Unternehmen der gewerblichen Wirtschaft unter 50 Beschäftigten; freie Berufe, Arztpraxen, MVZ und Kliniken sind ausgeschlossen. Den Antrag stellt Ihr Unternehmen selbst über ELSTER, erst der Bescheid, dann die Beauftragung.";
+  var STD_NOTE = "Für dieses Bundesland haben wir bewusst keine Zahlen hinterlegt, weil sich die Landesprogramme laufend ändern und eine veraltete Angabe hier mehr schadet als nützt. Üblich sind Fördersätze zwischen 30 und 50 Prozent und Höchstbeträge im niedrigen fünfstelligen Bereich. Welches Programm für Sie greift, klären wir im Erstgespräch. Zwei Regeln gelten fast überall: Hardware ist selten förderfähig, und beauftragt werden darf erst nach dem Bewilligungsbescheid.";
 
-  var form = document.getElementById("cfg");
-  var out = document.getElementById("cfg-result");
-  var miss = document.getElementById("cfg-miss");
-  var FIELDS = ["users", "intens", "qual", "zweck", "avail"];
+  var eur = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+  var $ = function (id) { return document.getElementById(id); };
 
-  function esc(s) {
-    return String(s).replace(/[&<>"]/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+  function fill(sel, obj, keys) {
+    var html = "";
+    (keys || Object.keys(obj)).forEach(function (k) {
+      html += '<option value="' + k + '">' + obj[k].label + "</option>";
     });
+    sel.innerHTML = html;
   }
 
-  function mark() {
-    var opts = form.querySelectorAll(".opt");
+  fill($("basis"), BASIS);
+  fill($("gpu"), GPU);
+  fill($("ram"), RAM);
+  fill($("disk"), DISK);
+  fill($("usv"), USV);
+  fill($("anfahrt"), ANFAHRT);
+  fill($("wartung"), WARTUNG);
+  $("land").innerHTML = LAENDER.map(function (l) {
+    return '<option value="' + l[0] + '"' + (l[0] === "BY" ? " selected" : "") + ">" + l[1] + "</option>";
+  }).join("");
+
+  function gpuOptions() {
+    var max = BASIS[$("basis").value].max;
+    var cur = parseInt($("gpuN").value, 10) || 1;
+    var html = "";
+    for (var i = 1; i <= max; i++) html += '<option value="' + i + '">' + i + (i === 1 ? " Karte" : " Karten") + "</option>";
+    $("gpuN").innerHTML = html;
+    $("gpuN").value = Math.min(cur, max);
+  }
+
+  function rechne() {
+    var basis = BASIS[$("basis").value];
+    var gpu = GPU[$("gpu").value];
+    var n = parseInt($("gpuN").value, 10) || 1;
+    var ram = RAM[$("ram").value], disk = DISK[$("disk").value], usv = USV[$("usv").value];
+    var anfahrt = ANFAHRT[$("anfahrt").value];
+
+    var tage = 2;
+    if ($("l-rag").checked) tage += 1;
+    if ($("l-schnitt").checked) tage += 1;
+    if ($("l-schulung").checked) tage += 0.5;
+    if ($("basis").value === "rack") tage += 0.5;
+
+    var hardware = basis.preis + gpu.preis * n + ram.preis + disk.preis + usv.preis;
+    var dienst = tage * TAGESSATZ;
+    var wartung = $("wartung").value === "keine" ? 0 : wartungspreis(n);
+    var einmalig = hardware + HANDLING + dienst + anfahrt.preis;
+
+    return {
+      basis: basis, gpu: gpu, n: n, ram: ram, disk: disk, usv: usv, anfahrt: anfahrt,
+      tage: tage, hardware: hardware, dienst: dienst, wartung: wartung, einmalig: einmalig,
+      vram: gpu.vram * n
+    };
+  }
+
+  function flags(r) {
+    var out = [];
+    var noetig = { a: 32, b: 96, c: 192 }[$("qual").value];
+    if (r.vram < noetig) {
+      out.push("Ihre Auswahl ergibt <b>" + r.vram + " GB</b> Grafikspeicher. Für den gewählten Qualitätsanspruch sollten es mindestens <b>" +
+        noetig + " GB</b> sein, sonst passt das gewünschte Modell nicht in den Speicher.");
+    }
+    if (r.basis.max === 1 && r.n === 1 && $("intens").value === "c" && $("users").value !== "a") {
+      out.push("Bei dauerhafter Nutzung durch mehrere Personen wird eine einzelne Karte zur Bremse. Eine zweite Karte kostet weniger als die Wartezeit.");
+    }
+    if (r.usv === USV.keine && r.basis !== BASIS.tower) {
+      out.push("Zu einer Maschine dieser Größe gehört üblicherweise eine unterbrechungsfreie Stromversorgung. Ohne sie kann ein Stromausfall den Datenbestand beschädigen.");
+    }
+    $("flags").innerHTML = out.map(function (t) { return '<div class="flag">' + t + "</div>"; }).join("");
+  }
+
+  function zeileHTML(name, wert, cls) {
+    return '<div class="li ' + (cls || "") + '"><span class="n">' + name + '</span><span class="v">' + wert + "</span></div>";
+  }
+
+  function render() {
+    var r = rechne();
+
+    var body =
+      '<div class="li grp">Hardware</div>' +
+      zeileHTML(r.basis.label, eur.format(r.basis.preis)) +
+      zeileHTML(r.n + " × " + r.gpu.label, eur.format(r.gpu.preis * r.n)) +
+      zeileHTML("Arbeitsspeicher " + r.ram.label, r.ram.preis ? eur.format(r.ram.preis) : "enthalten") +
+      zeileHTML("Speicher " + r.disk.label, r.disk.preis ? eur.format(r.disk.preis) : "enthalten") +
+      (r.usv.preis ? zeileHTML("USV " + r.usv.label, eur.format(r.usv.preis)) : "") +
+      zeileHTML("Handlingpauschale", eur.format(HANDLING)) +
+      '<div class="li grp">Einrichtung</div>' +
+      zeileHTML(r.tage.toString().replace(".", ",") + " Tage à " + eur.format(TAGESSATZ), eur.format(r.dienst)) +
+      (r.anfahrt.preis ? zeileHTML("Anfahrt, " + r.anfahrt.label, eur.format(r.anfahrt.preis)) : "");
+
+    $("sum-body").innerHTML = body;
+
+    $("sum-total").innerHTML =
+      '<div class="big"><span>Einmalig, netto</span><b>' + eur.format(r.einmalig) + "</b></div>" +
+      '<div class="mtl"><span>' + (r.wartung ? "Wartung monatlich" : "Ohne Wartung") + "</span><b>" +
+      (r.wartung ? eur.format(r.wartung) : "—") + "</b></div>";
+
+    $("sum-title").textContent = r.gpu.vram * r.n + " GB Grafikspeicher";
+
+    flags(r);
+    foerderung(r);
+    anfrageLink(r);
+  }
+
+  function foerderung(r) {
+    var satz = parseInt($("satz").value, 10);
+    var basis = r.dienst;
+    var zuschuss = Math.round(basis * satz / 100);
+    var bayern = $("land").value === "BY";
+
+    $("f-basis").textContent = eur.format(basis);
+    $("f-basis-sub").textContent = "Einrichtung und Schulung. Hardware, Handlingpauschale und Anfahrt zählen nicht dazu.";
+    $("f-zuschuss").textContent = satz ? eur.format(zuschuss) : "—";
+    $("f-rest").textContent = satz
+      ? "Bleiben " + eur.format(r.einmalig - zuschuss) + " statt " + eur.format(r.einmalig) + " einmalig."
+      : "Ohne Zuschuss bleibt es bei " + eur.format(r.einmalig) + ".";
+
+    var note = bayern ? BY_NOTE : STD_NOTE;
+    if (basis < 4000) {
+      note = '<b>Bagatellgrenze beachten.</b> Ihr förderfähiger Anteil liegt bei ' + eur.format(basis) + ". " +
+        (bayern
+          ? "Bayern fördert erst ab 4.000 € förderfähiger Ausgaben. Für diese Konfiguration allein käme ein Zuschuss damit nicht in Frage."
+          : "Viele Programme setzen eine Untergrenze im Bereich von 4.000 €. Ob Ihr Landesprogramm eine hat, prüfen wir.") +
+        " Wer die Schwelle erreichen will, bündelt üblicherweise mehrere Umsetzungsleistungen in einem Antrag.<br><br>" + note;
+    }
+    $("land-note").innerHTML = note;
+  }
+
+  function anfrageLink(r) {
+    var satz = parseInt($("satz").value, 10);
+    var zuschuss = Math.round(r.dienst * satz / 100);
+    var land = $("land").options[$("land").selectedIndex].text;
+    var leist = [];
+    if ($("l-rag").checked) leist.push("Dokumentenanbindung");
+    if ($("l-schnitt").checked) leist.push("Anbindung an ERP/DMS");
+    if ($("l-schulung").checked) leist.push("Schulung vor Ort");
+
+    var body =
+      "Guten Tag,\n\nwir haben den Konfigurator auf kervalt.de benutzt und hätten gern ein Angebot.\n\n" +
+      "MASCHINE\n" +
+      "- Basissystem: " + r.basis.label + "\n" +
+      "- Grafikkarten: " + r.n + " × " + r.gpu.label + " (" + r.vram + " GB gesamt)\n" +
+      "- Arbeitsspeicher: " + r.ram.label + "\n" +
+      "- Speicher: " + r.disk.label + "\n" +
+      "- USV: " + r.usv.label + "\n\n" +
+      "LEISTUNGEN\n" +
+      "- Grundeinrichtung, dazu: " + (leist.length ? leist.join(", ") : "nichts weiter") + "\n" +
+      "- Aufwand laut Konfigurator: " + String(r.tage).replace(".", ",") + " Tage\n" +
+      "- Anfahrt: " + r.anfahrt.label + "\n" +
+      "- Wartung: " + (r.wartung ? r.wartung + " € im Monat" : "zunächst keine") + "\n\n" +
+      "RICHTWERT LAUT KONFIGURATOR\n" +
+      "- Einmalig netto: " + r.einmalig + " €\n" +
+      "- Davon förderfähig (Einrichtung): " + r.dienst + " €\n" +
+      "- Angenommener Zuschuss (" + satz + " %, Bundesland " + land + "): " + (satz ? zuschuss + " €" : "keiner") + "\n\n" +
+      "UNSER BEDARF\n" +
+      "- Personen: " + $("users").options[$("users").selectedIndex].text + "\n" +
+      "- Nutzung: " + $("intens").options[$("intens").selectedIndex].text + "\n" +
+      "- Anspruch: " + $("qual").options[$("qual").selectedIndex].text + "\n\n" +
+      "Betrieb: \nAnsprechpartner: \nTelefon: \n\nViele Grüße\n";
+
+    $("anfrage").href = "mailto:info@kervalt.de?subject=" +
+      encodeURIComponent("Angebotsanfrage KI-Server, " + r.vram + " GB") +
+      "&body=" + encodeURIComponent(body);
+  }
+
+  function vorschlag() {
+    var uw = { a: 1, b: 2, c: 3, d: 4 }[$("users").value];
+    var iw = { a: 1, b: 2, c: 3 }[$("intens").value];
+    var qt = { a: 0, b: 1, c: 2 }[$("qual").value];
+    var last = uw * iw;
+    var stufe = Math.min(3, qt + (last >= 10 ? 2 : last >= 5 ? 1 : 0));
+
+    var plan = [
+      { basis: "tower",  gpu: "r5090", n: 1, ram: "128", disk: "2",  usv: "keine" },
+      { basis: "tower",  gpu: "rpro",  n: 1, ram: "256", disk: "4",  usv: "klein" },
+      { basis: "server", gpu: "rpro",  n: 2, ram: "512", disk: "8",  usv: "klein" },
+      { basis: "rack",   gpu: "rpro",  n: 4, ram: "512", disk: "16", usv: "rack" }
+    ][stufe];
+
+    $("basis").value = plan.basis;
+    gpuOptions();
+    $("gpu").value = plan.gpu;
+    $("gpuN").value = plan.n;
+    $("ram").value = plan.ram;
+    $("disk").value = plan.disk;
+    $("usv").value = plan.usv;
+    $("l-rag").checked = true;
+    $("l-schulung").checked = true;
+    $("l-schnitt").checked = stufe >= 2;
+    marks();
+    render();
+    $("vorschlag-info").textContent = "Vorschlag übernommen. Ändern Sie ruhig alles daran.";
+  }
+
+  function marks() {
+    var opts = document.querySelectorAll(".opt");
     for (var i = 0; i < opts.length; i++) {
       var input = opts[i].querySelector("input");
       opts[i].classList.toggle("on", input.checked);
     }
   }
 
-  function answers() {
-    var a = {};
-    for (var i = 0; i < FIELDS.length; i++) {
-      var el = form.querySelector('input[name="' + FIELDS[i] + '"]:checked');
-      if (!el) return null;
-      a[FIELDS[i]] = el.value;
-    }
-    return a;
-  }
-
-  function compute(a) {
-    var users = USERS[a.users], intens = INTENS[a.intens];
-    var qual = QUAL[a.qual], zweck = ZWECK[a.zweck], avail = AVAIL[a.avail];
-
-    var last = users.w * intens.w;
-    var lastBump = last >= 10 ? 2 : last >= 5 ? 1 : 0;
-    var roh = qual.tier + lastBump + zweck.bump;
-    var idx = Math.min(3, Math.max(roh, avail.min));
-
-    var schritte = [];
-    schritte.push("Anspruch <b>" + esc(qual.label) + "</b> führt auf " + esc(qual.modell) +
-      ". Dafür sind mindestens <b>" + esc(qual.vram) + "</b> Grafikspeicher nötig, also mindestens Stufe " +
-      esc(TIERS[qual.tier].name) + ".");
-    if (lastBump === 0) {
-      schritte.push("<b>" + esc(users.label) + "</b> bei <b>" + esc(intens.label) +
-        "</b>er Nutzung ergibt eine Last, die eine einzelne Karte gut wegsteckt. Kein Aufschlag.");
-    } else {
-      schritte.push("<b>" + esc(users.label) + "</b> bei <b>" + esc(intens.label) +
-        "</b>er Nutzung lässt genug Anfragen gleichzeitig auflaufen, dass eine Karte zur Bremse wird. Das hebt die Stufe um " +
-        (lastBump === 2 ? "zwei Schritte" : "einen Schritt") + ".");
-    }
-    if (zweck.bump) {
-      schritte.push("Weil <b>" + esc(zweck.label) + "</b> laufen soll, müssen mehrere Modelle gleichzeitig im Speicher liegen. Das hebt die Stufe um einen weiteren Schritt.");
-    } else {
-      schritte.push("Der Schwerpunkt <b>" + esc(zweck.label) + "</b> kommt mit einem Modell aus und ändert die Stufe nicht.");
-    }
-    if (avail.min > roh) {
-      schritte.push("Weil das System <b>" + esc(avail.label) +
-        "</b>, reicht eine einzelne Karte nicht: Bei einem Defekt stünde alles. Das hebt die Stufe auf " +
-        esc(TIERS[avail.min].name) + ".");
-    } else if (a.avail === "c") {
-      schritte.push("Der Anspruch <b>" + esc(avail.label) + "</b> ist mit " + esc(TIERS[idx].karten) + " bereits abgedeckt.");
-    } else {
-      schritte.push("Beim Verfügbarkeitsanspruch <b>" + esc(avail.label) + "</b> ist keine Redundanz nötig. Es bleibt bei der Stufe aus den Punkten davor.");
-    }
-    if (roh > 3) {
-      schritte.push("Rechnerisch läge das noch darüber. Oberhalb von Enterprise HA wird nicht mehr gestapelt, sondern einzeln ausgelegt.");
-    }
-
-    var zweifel = last <= 2 && a.qual === "a" && a.avail === "a";
-    return { idx: idx, tier: TIERS[idx], schritte: schritte, zweifel: zweifel, last: last };
-  }
-
-  function mailto(a, r) {
-    var body =
-      "Guten Tag,\n\nwir haben den Konfigurator auf kervalt.de benutzt und hätten gern ein Angebot.\n\n" +
-      "Empfehlung: " + r.tier.name + " (" + r.tier.gpu + ", " + r.tier.vram + ")\n\n" +
-      "Unsere Angaben:\n" +
-      "- Nutzer: " + USERS[a.users].label + "\n" +
-      "- Nutzung: " + INTENS[a.intens].label + "\n" +
-      "- Qualitätsanspruch: " + QUAL[a.qual].label + "\n" +
-      "- Schwerpunkt: " + ZWECK[a.zweck].label + "\n" +
-      "- Verfügbarkeit: " + AVAIL[a.avail].label + "\n\n" +
-      "Betrieb: \nAnsprechpartner: \nTelefon: \n\nViele Grüße\n";
-    return "mailto:info@kervalt.de?subject=" +
-      encodeURIComponent("Angebotsanfrage " + r.tier.name) +
-      "&body=" + encodeURIComponent(body);
-  }
-
-  function render(a) {
-    var r = compute(a);
-    var li = r.schritte.map(function (s) { return "<li>" + s + "</li>"; }).join("");
-
-    var html =
-      '<div class="result">' +
-        '<div class="lbl">Die kleinste Stufe, die für Sie reicht</div>' +
-        '<div class="tier">' + esc(r.tier.name) + "</div>" +
-        '<div class="duo">' +
-          "<div>" +
-            "<p>Diese Stufe erfüllt alle fünf Angaben, ohne dass Sie Reserve bezahlen, die niemand nutzt. Wenn Ihnen ein Punkt unrealistisch vorkommt, ändern Sie ihn oben und sehen sofort, was sich verschiebt.</p>" +
-            "<h3>Wie sich das ergibt</h3>" +
-            "<ol>" + li + "</ol>" +
-          "</div>" +
-          '<aside class="plate" aria-label="Eckdaten der Empfehlung">' +
-            '<div class="plate-hd"><span class="led" aria-hidden="true"></span>' + esc(r.tier.name) + "</div>" +
-            "<dl>" +
-              '<div class="row"><dt>Grafikkarten</dt><dd>' + esc(r.tier.gpu) + "</dd></div>" +
-              '<div class="row"><dt>Speicher</dt><dd>' + esc(r.tier.vram) + "</dd></div>" +
-              '<div class="row"><dt>Modellklasse</dt><dd>' + esc(r.tier.klasse) + "</dd></div>" +
-              '<div class="row"><dt>Aufbau</dt><dd>2–4 Tage</dd></div>' +
-              '<div class="row"><dt>Wartung</dt><dd>monatlich</dd></div>' +
-            "</dl>" +
-          "</aside>" +
-        "</div>" +
-        (r.zweifel
-          ? '<div class="warn"><b>Ehrlich gesagt:</b> Bei dieser Nutzung lohnt sich eine eigene Maschine oft nicht. Wenige Personen, gelegentlicher Einsatz und moderater Anspruch bekommt man häufig günstiger anders gelöst. Fragen Sie uns danach, bevor Sie investieren.</div>'
-          : "") +
-        '<div class="cta-row">' +
-          '<a class="btn btn-primary" href="' + mailto(a, r) + '">Angebot dazu anfragen</a>' +
-          '<a class="btn btn-ghost" href="/#appliances">Alle vier Stufen vergleichen</a>' +
-        "</div>" +
-        '<p class="hint" style="margin-top:18px">Richtwert auf Basis Ihrer fünf Angaben, kein Angebot. Was am Ende aufgestellt wird, klären wir im Gespräch. Preise nennen wir erst im Angebot und halten sie 14 Tage gültig.</p>' +
-      "</div>";
-
-    out.innerHTML = html;
-    out.hidden = false;
-  }
-
-  form.addEventListener("change", function () {
-    mark();
-    miss.textContent = "";
-    if (!out.hidden) {
-      var a = answers();
-      if (a) render(a);
-    }
+  $("basis").addEventListener("change", function () {
+    gpuOptions();
+    $("basis-hint").textContent = BASIS[this.value].hint;
+    render();
+  });
+  $("vorschlag").addEventListener("click", vorschlag);
+  ["gpu", "gpuN", "ram", "disk", "usv", "anfahrt", "wartung", "satz", "land", "qual", "users", "intens"]
+    .forEach(function (id) { $(id).addEventListener("change", render); });
+  ["l-rag", "l-schnitt", "l-schulung"].forEach(function (id) {
+    $(id).addEventListener("change", function () { marks(); render(); });
+  });
+  $("land").addEventListener("change", function () {
+    if (this.value === "BY") $("satz").value = "50";
+    render();
   });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var a = answers();
-    if (!a) {
-      var offen = FIELDS.filter(function (f) {
-        return !form.querySelector('input[name="' + f + '"]:checked');
-      });
-      miss.textContent = offen.length === 1
-        ? "Eine Frage ist noch offen."
-        : "Es sind noch " + offen.length + " Fragen offen.";
-      var first = form.querySelector('input[name="' + offen[0] + '"]');
-      if (first) {
-        first.focus();
-        first.closest(".q").scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      return;
-    }
-    render(a);
-    out.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  mark();
+  gpuOptions();
+  $("basis-hint").textContent = BASIS[$("basis").value].hint;
+  $("gpu").value = "rpro";
+  $("ram").value = "256";
+  $("disk").value = "4";
+  marks();
+  render();
 })();
 </script>
 
