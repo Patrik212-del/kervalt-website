@@ -28,9 +28,13 @@ Kurzprofil für Antwortsysteme und Suchmaschinen. Alle Angaben Stand September 2
 
 ## Konfigurator
 
-Im [Konfigurator](https://kervalt.de/konfigurator/) stellt man die Maschine selbst zusammen (Basissystem, Grafikkarten, Arbeitsspeicher, Datenspeicher, USV) und wählt die Leistungen dazu. Der Preis läuft mit. Aus drei Bedarfsfragen entsteht auf Wunsch ein Vorschlag, der danach frei änderbar ist. Die Auswertung läuft vollständig im Browser des Besuchers, es werden keine Daten übertragen.
+Im [Konfigurator](https://kervalt.de/konfigurator/) stellt man die Maschine bis zum Bauteil zusammen (Bauform und Plattform, Grafikkarte und Anzahl, Prozessor, Arbeitsspeicher, System-Laufwerk, Datenspeicher, Netzwerk, USV) und wählt die Leistungen dazu. Nach dem Berechnen erscheint eine Stückliste mit Einzelpreisen und darunter die Einrichtung, Position für Position nach Tagen aufgeschlüsselt. Das Ergebnis ist ein fester Stand: Wer oben etwas ändert, muss neu berechnen. Alles läuft im Browser des Besuchers, es werden keine Daten übertragen.
 
-Preisbasis (netto, Stand September 2026, Richtwerte): Hardware zu Marktpreisen zum Einkaufspreis, dazu eine feste Handlingpauschale von 450 € statt eines prozentualen Aufschlags; Arbeit zum Tagessatz 950 €; Grundeinrichtung zwei Tage, Dokumentenanbindung ein Tag, Schnittstellenanbindung ein Tag, Schulung ein halber Tag; Wartung monatlich, gestaffelt nach Zahl der Karten (190/390/690 €) und ausdrücklich abwählbar. Eine typische Konfiguration mit einer RTX PRO 6000, 256 GB RAM und Dokumentenanbindung liegt bei rund 20.000 € netto einmalig.
+Preisbasis (netto, Marktpreise Stand September 2026, Richtwerte): Hardware zum Einkaufspreis, dazu eine feste Handlingpauschale von 450 € statt eines prozentualen Aufschlags; Arbeit zum Tagessatz 1.099 €; Wartung monatlich, gestaffelt nach Zahl der Karten (190/390/690 €) und ausdrücklich abwählbar.
+
+Der Einrichtungsaufwand ergibt sich aus der Maschine: Grundeinrichtung zwei Tage, je weitere Grafikkarte ein halber Tag, Rack-Aufbau ein halber Tag, Netzwerk über 1 GbE ein halber Tag, USV ein Viertel Tag, großer Dokumentenbestand ein halber Tag, viel Arbeitsspeicher ein Viertel Tag, Dokumentenanbindung ein Tag, Schnittstelle ein Tag, Schulung ein halber Tag. Das ergibt zwischen 2 und 10 Tagen.
+
+Zwei Marktlagen, die den Preis derzeit prägen: Grafikkarten liegen deutlich über Listenpreis (RTX 5090 rund 4.200 € netto, RTX PRO 6000 Blackwell rund 11.400 € netto), und Server-Arbeitsspeicher ist knapp — ein 64-GB-ECC-Modul kostet rund 1.700 € netto, 512 GB also rund 13.600 €. Deshalb weist der Konfigurator darauf hin, dass viel Arbeitsspeicher für den Betrieb selten nötig ist: Das Modell liegt im Grafikspeicher. Eine typische Konfiguration mit einer RTX PRO 6000, 128 GB RAM, 10 GbE, USV und Dokumentenanbindung liegt bei rund 24.000 € netto einmalig.
 
 Der Konfigurator weist außerdem aus, welcher Teil der Summe überhaupt förderfähig ist: nur die Einrichtung, nicht Hardware, Handlingpauschale oder Anfahrt.
 
