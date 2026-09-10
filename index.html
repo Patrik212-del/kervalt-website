@@ -78,7 +78,7 @@
     {"@type":"Question","name":"Welche Sprachmodelle laufen auf so einem Server?","acceptedAnswer":{"@type":"Answer","text":"Offene Modelle, die Sie selbst herunterladen und behalten dürfen, zum Beispiel aus den Familien Llama, Qwen oder Mistral. Ausgeliefert werden sie über vLLM mit einer OpenAI-kompatiblen Schnittstelle, sodass viele vorhandene Werkzeuge ohne Umbau funktionieren. Welches Modell passt, hängt vom verfügbaren Grafikspeicher ab."}},
     {"@type":"Question","name":"Ist damit automatisch alles DSGVO-konform?","acceptedAnswer":{"@type":"Answer","text":"Nein, und das sollte Ihnen niemand versprechen. Ein Server im eigenen Haus löst den größten Brocken: Es gibt keine Übermittlung in ein Drittland und keinen externen Auftragsverarbeiter für die Verarbeitung selbst. Verzeichnis der Verarbeitungstätigkeiten, Zugriffsrechte, Löschkonzept und die Einbindung Ihres Betriebsrats bleiben Ihre Aufgabe. Wir liefern die technische Dokumentation dafür zu."}},
     {"@type":"Question","name":"Was passiert, wenn die Hardware ausfällt?","acceptedAnswer":{"@type":"Answer","text":"Bei den kleineren Stufen gilt die Herstellergarantie, und der Betrieb steht so lange still wie eine defekte Grafikkarte braucht. Wer das nicht hinnehmen kann, nimmt eine Stufe mit zwei Karten oder eine Rack-Lösung mit Ersatzteilvorhaltung. Was Ihr Ausfall kostet, klären wir vorher, sonst kauft man Redundanz auf Verdacht."}},
-    {"@type":"Question","name":"Wie lange dauert die Einrichtung?","acceptedAnswer":{"@type":"Answer","text":"Der Aufbau vor Ort dauert in der Regel zwei bis vier Arbeitstage, je nachdem wie viele Dokumentenquellen angebunden werden. Davor liegt die Lieferzeit der Hardware, die derzeit der unsicherste Teil im Zeitplan ist."}}
+    {"@type":"Question","name":"Wie lange dauert die Einrichtung?","acceptedAnswer":{"@type":"Answer","text":"Zwei Tage sind die Grundeinrichtung. Jede weitere Karte, die Dokumentenanbindung, eine Schnittstelle zum ERP und die Schulung kommen dazu, sodass es bei einer großen Maschine bis zu zehn Arbeitstage werden. Der Konfigurator schlüsselt das für Ihre Zusammenstellung Position für Position auf. Davor liegt die Lieferzeit der Hardware, die derzeit der unsicherste Teil im Zeitplan ist."}}
   ]
 }
 </script>
@@ -113,7 +113,7 @@
       <div class="trust">
         <span><i class="tick" aria-hidden="true"></i> Hardware zum Einkaufspreis</span>
         <span><i class="tick" aria-hidden="true"></i> Kauf statt Abo</span>
-        <span><i class="tick" aria-hidden="true"></i> Bundesweit im Einsatz</span>
+        <span><i class="tick" aria-hidden="true"></i> Aufbau bundesweit</span>
       </div>
     </div>
     <aside class="plate" aria-label="Eckdaten">
@@ -147,15 +147,15 @@
     <div class="cards">
       <article class="card">
         <h3>Fragen an die eigenen Dokumente</h3>
-        <p>Wartungsverträge, Normen, Protokolle, Handbücher. Die Antwort kommt mit Angabe der Quelle, nicht als freies Gerede. Wer nachschlagen will, springt direkt in das Dokument.</p>
+        <p>Das System liest Ihren gesamten Bestand und antwortet mit Angabe der Quelle. Wer nachschlagen will, springt direkt in das Dokument und sieht die Stelle, auf die sich die Antwort stützt.</p>
       </article>
       <article class="card">
         <h3>Entwürfe für Schriftverkehr</h3>
-        <p>Angebote, Absagen, Reklamationen, Serviceberichte. Der Entwurf entsteht aus Ihren eigenen Vorlagen und Ihrem Ton, nicht aus dem Durchschnitt des Internets.</p>
+        <p>Der Entwurf entsteht aus Ihren eigenen Vorlagen und in Ihrem Ton, nicht aus dem Durchschnitt des Internets. Was danach hinausgeht, entscheidet weiterhin ein Mensch.</p>
       </article>
       <article class="card">
         <h3>Wiederkehrende Handgriffe</h3>
-        <p>Eingangsrechnungen erfassen, Mails vorsortieren, Daten zwischen zwei Systemen übergeben. Unspektakulär, aber der Punkt, an dem sich die Anschaffung rechnet.</p>
+        <p>Eingangsrechnungen erfassen, Mails vorsortieren, Daten zwischen zwei Systemen übergeben. Hier rechnet sich die Anschaffung am ehesten, weil die Arbeit jede Woche wiederkommt.</p>
       </article>
       <article class="card">
         <h3>Übersetzen und Zusammenfassen</h3>
@@ -195,7 +195,7 @@
 
   <section class="sec wrap" id="appliances">
     <span class="eyebrow">Die Größen</span>
-    <h2>Vier Stufen, ausgewählt wird die kleinste, die reicht.</h2>
+    <h2>Vier Stufen, von der Abteilung bis zum Rack.</h2>
     <p class="sub">Wie groß die Maschine sein muss, ergibt sich aus zwei Fragen: Wie viele Leute arbeiten gleichzeitig damit, und wie gut müssen die Antworten sein. Der Grafikspeicher entscheidet, welche Modellgröße überhaupt läuft; die Zahl der Karten entscheidet, wie viele Anfragen parallel bedient werden.</p>
     <div class="tbl-scroll">
       <table>
@@ -248,9 +248,10 @@
       <div>
         <h3>Was Sie bezahlen</h3>
         <ul>
-          <li>Einrichtung und Integration zum <span class="amount">Festpreis</span>, in der Regel zwei bis vier Tage</li>
+          <li>Einrichtung und Integration zum <span class="amount">Festpreis</span>: zwei Tage Grundeinrichtung, mehr bei mehreren Karten, Dokumentenanbindung und Schnittstellen</li>
           <li>Wartung per Fernzugriff, <span class="amount">monatlich</span> und kündbar</li>
           <li>Keine Kosten pro Anfrage, kein Preis pro Nutzer</li>
+          <li>Anfahrt nach Entfernung. Reisekosten sind bei Zuschüssen fast überall ausgeschlossen, deshalb weisen wir sie getrennt aus</li>
         </ul>
       </div>
     </div>
@@ -258,12 +259,12 @@
 
   <section class="sec wrap">
     <div class="panel">
-      <h2>Gefördert wird fast immer die Einrichtung, fast nie die Hardware.</h2>
-      <p>Das wird oft verkürzt dargestellt, deshalb hier genau: Zuschussprogramme fördern in aller Regel Leistungen externer Anbieter, also Installation, Einrichtung, individuelle Anpassung und technische Dokumentation. Die Server-Hardware fällt fast überall heraus. Zu unserem Modell passt das gut, weil Sie die Maschine ohnehin zum Einkaufspreis bekommen und nur die Arbeit bezahlen.</p>
+      <h2>Die Förderlandschaft ist 2026 dünn geworden.</h2>
+      <p>Von den sechzehn Landesprogrammen ist derzeit wenig nutzbar; die Einzelheiten stehen weiter unten. Und was übrig ist, zahlt so gut wie nie das Blech: Zuschussprogramme fördern Leistungen externer Anbieter, also Installation, Einrichtung, individuelle Anpassung und technische Dokumentation. Die Server-Hardware fällt fast überall heraus. Zu unserem Modell passt das gut, weil Sie die Maschine ohnehin zum Einkaufspreis bekommen und nur die Arbeit bezahlen.</p>
       <dl>
         <dt>Bundesweit</dt><dd>Der KfW-Förderkredit Digitalisierung steht überall offen, ausdrücklich auch Freiberuflern. Das ist ein zinsgünstiger Kredit, kein Zuschuss.</dd>
         <dt>Für Beratung</dt><dd>Die BAFA-Beratungsförderung bezuschusst Beratungsleistungen, nicht die Umsetzung. Die Richtlinie gilt bis Ende 2026.</dd>
-        <dt>Die Zuschüsse</dt><dd>kommen von den Bundesländern und sind überall anders zugeschnitten. Fördersätze liegen meist zwischen 30 und 50 Prozent.</dd>
+        <dt>Die Zuschüsse</dt><dd>kommen von den Ländern, und dort ist 2026 wenig offen. Wir haben am 8. September alle sechzehn Programme durchgesehen: fünf sind beendet, vier nur eingeschränkt nutzbar, für vier ließ sich keines belegen. Bleiben drei, in denen sich die Rechnung lohnt. Welches Ihres ist, zeigt der <a href="/konfigurator/">Konfigurator</a>.</dd>
         <dt>Beispiel Bayern</dt><dd>der Digitalbonus fördert bis 50 %, Standard bis 7.500 €, Plus bis 30.000 €. Hardware ausgenommen, freie Berufe und Praxen nicht antragsberechtigt, Untergrenze 4.000 € förderfähige Ausgaben.</dd>
         <dt>Überall gleich</dt><dd>erst der Bewilligungsbescheid, dann die Beauftragung. Wer vorher bestellt, verliert den Anspruch.</dd>
       </dl>
@@ -273,19 +274,19 @@
   </section>
 
   <section class="sec wrap">
-    <h2>Vom ersten Telefonat bis zum laufenden Betrieb.</h2>
+    <h2>Von der ersten Anfrage bis zum laufenden Betrieb.</h2>
     <p class="sub">Vier Schritte, von denen der erste nichts kostet und der zweite die eigentliche Entscheidung ist.</p>
     <div class="steps">
       <div class="step"><div class="n">01</div><h3>Erstgespräch</h3><p>Eine halbe Stunde, kostenlos. Wir sehen uns an, wo im Betrieb überhaupt etwas zu holen ist.</p></div>
       <div class="step"><div class="n">02</div><h3>Auslegung</h3><p>Nutzerzahl, Qualitätsanspruch und Dokumentenmenge ergeben die passende Stufe und ein Festpreisangebot.</p></div>
-      <div class="step"><div class="n">03</div><h3>Aufbau</h3><p>Maschine aufstellen, Modelle einrichten, Ihre Dokumente anbinden, Team einweisen. Zwei bis vier Tage.</p></div>
+      <div class="step"><div class="n">03</div><h3>Aufbau</h3><p>Maschine aufstellen, Modelle einrichten, Ihre Dokumente anbinden, Team einweisen. Zwei Tage Grundeinrichtung, mit Anbindung und Schulung entsprechend mehr.</p></div>
       <div class="step"><div class="n">04</div><h3>Betrieb</h3><p>Überwachung, Updates und Support per Fernzugriff. Sie behalten den Schlüssel zum Zugang.</p></div>
     </div>
   </section>
 
   <section class="sec wrap prose">
-    <h2>Ein Ansprechpartner, kein Ticketsystem.</h2>
-    <p>Hinter Kervalt steht Patrik Kaiser. Ich komme aus der Inbetriebnahme im Maschinenbau und kenne die Seite, auf der die Anlage am Ende laufen muss. Wer bei mir anruft, spricht mit der Person, die den Server aufgestellt hat.</p>
+    <h2>Zur Person.</h2>
+    <p>Hinter Kervalt steht Patrik Kaiser. Ich komme aus der Inbetriebnahme im Maschinenbau und kenne die Seite, auf der die Anlage am Ende laufen muss. Wer hier anfragt, hat es mit der Person zu tun, die den Server auch aufstellt.</p>
     <p>Der Sitz ist Traunstein, aufgebaut wird bundesweit. Zum Aufstellen und Einweisen komme ich zu Ihnen, danach läuft die Betreuung über die Fernwartung. Größere Häuser mit eigener IT-Abteilung sind ausdrücklich willkommen: Dann übernehmen wir den Aufbau und Ihre Leute den Betrieb.</p>
   </section>
 
@@ -315,7 +316,7 @@
       </details>
       <details>
         <summary>Wie lange dauert die Einrichtung?</summary>
-        <p>Der Aufbau vor Ort dauert in der Regel zwei bis vier Arbeitstage, je nachdem wie viele Dokumentenquellen angebunden werden. Davor liegt die Lieferzeit der Hardware, die derzeit der unsicherste Teil im Zeitplan ist.</p>
+        <p>Zwei Tage sind die Grundeinrichtung. Jede weitere Karte, die Dokumentenanbindung, eine Schnittstelle zum ERP und die Schulung kommen dazu, sodass es bei einer großen Maschine bis zu zehn Arbeitstage werden. Der Konfigurator schlüsselt das für Ihre Zusammenstellung Position für Position auf. Davor liegt die Lieferzeit der Hardware, die derzeit der unsicherste Teil im Zeitplan ist.</p>
       </details>
     </div>
   </section>

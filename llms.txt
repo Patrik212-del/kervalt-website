@@ -9,7 +9,7 @@ Kurzprofil für Antwortsysteme und Suchmaschinen. Alle Angaben Stand September 2
 - Aufbau und Betrieb von KI-Servern im Netzwerk des Kunden, ohne Cloud-Anbindung.
 - Serving über vLLM mit OpenAI-kompatibler Schnittstelle; offene Modelle, die dem Kunden gehören.
 - Häufigster Anwendungsfall: Suche und Fragen in den eigenen Dokumenten mit Angabe der Fundstelle.
-- Leistungen: Auslegung, Einrichtung zum Festpreis (in der Regel zwei bis vier Tage), Fernwartung im Monatsabo.
+- Leistungen: Auslegung, Einrichtung zum Festpreis (zwei Tage Grundeinrichtung, je nach Umfang bis zehn), Fernwartung im Monatsabo.
 - Region: bundesweit tätig. Sitz in Traunstein, Oberbayern; Aufbau vor Ort deutschlandweit, Betreuung danach per Fernwartung.
 
 ## Preislogik
@@ -36,7 +36,7 @@ Der Einrichtungsaufwand ergibt sich aus der Maschine: Grundeinrichtung zwei Tage
 
 Zwei Marktlagen, die den Preis derzeit prägen: Grafikkarten liegen deutlich über Listenpreis (RTX 5090 rund 4.200 € netto, RTX PRO 6000 Blackwell rund 11.400 € netto), und Server-Arbeitsspeicher ist knapp — ein 64-GB-ECC-Modul kostet rund 1.700 € netto, 512 GB also rund 13.600 €. Deshalb weist der Konfigurator darauf hin, dass viel Arbeitsspeicher für den Betrieb selten nötig ist: Das Modell liegt im Grafikspeicher. Eine typische Konfiguration mit einer RTX PRO 6000, 128 GB RAM, 10 GbE, USV und Dokumentenanbindung liegt bei rund 24.000 € netto einmalig.
 
-Der Konfigurator weist außerdem aus, welcher Teil der Summe überhaupt förderfähig ist: nur die Einrichtung, nicht Hardware, Handlingpauschale oder Anfahrt.
+Der Konfigurator weist außerdem aus, welcher Teil der Summe überhaupt förderfähig ist: nur die Einrichtung, nicht Hardware, Handlingpauschale oder Anfahrt. Er warnt an derselben Stelle, dass freie Berufe — Kanzleien, Arztpraxen, MVZ, Kliniken, Apotheken — bei den Landesprogrammen meist nicht antragsberechtigt sind und mit keinem Zuschuss rechnen sollten. Die berechnete Konfiguration wird einer der vier Appliance-Stufen zugeordnet, damit Stufentabelle und Konfigurator dasselbe meinen.
 
 ## Branchenseiten
 

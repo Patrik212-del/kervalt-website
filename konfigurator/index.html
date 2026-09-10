@@ -240,7 +240,15 @@
       <p class="sub">Zwei Punkte, die viele Anbieterseiten falsch darstellen. Erstens: Gefördert wird in aller Regel die Dienstleistung, nicht die Hardware. Der Server selbst fällt bei den meisten Zuschussprogrammen heraus, unsere Arbeit daran nicht.</p>
       <p class="sub" style="margin-bottom:26px">Zweitens: Die Landesprogramme sind 2026 dünn geworden. Wir haben am 8. September alle sechzehn durchgesehen. In <b>fünf</b> Ländern ist das Digitalisierungsprogramm beendet, <b>vier</b> sind nur eingeschränkt nutzbar (Antragsstopp, ausgeschöpfte Mittel, oder interne Digitalisierung wird seit 2026 gar nicht mehr gefördert), für <b>vier</b> ließ sich kein passendes Programm belegen. Bleiben <b>drei</b>, bei denen es sich zu rechnen lohnt.</p>
 
-      <div class="sel-2">
+      <div class="flag">
+        <p><b>Freie Berufe rechnen hier besser mit null.</b> Die Landesprogramme richten sich fast
+        durchweg an die gewerbliche Wirtschaft. Kanzleien, Arztpraxen, MVZ, Kliniken und Apotheken
+        sind meist nicht antragsberechtigt, in Bayern namentlich. Offen steht der KfW-Förderkredit,
+        der ist aber ein Kredit. Näheres auf den Seiten für <a href="/ki-kanzlei/">Kanzleien</a>
+        und <a href="/ki-praxis/">Praxen</a>.</p>
+      </div>
+
+      <div class="sel-2" style="margin-top:20px">
         <div class="sel">
           <label for="land">Ihr Bundesland</label>
           <select id="land"></select>
@@ -547,7 +555,8 @@
     var r = lesen();
     snapshot = r;
 
-    $("erg-titel").textContent = r.vram + " GB Grafikspeicher, " + r.n + (r.n === 1 ? " Karte" : " Karten");
+    $("erg-titel").textContent = stufe(r) + ": " + r.vram + " GB Grafikspeicher, " +
+      r.n + (r.n === 1 ? " Karte" : " Karten");
     $("erg-sub").textContent = "Zusammengestellt aus " + r.hw.length + " Positionen. Die Einrichtung ergibt sich daraus mit " +
       tage(r.tSumme) + " Aufwand.";
 
@@ -580,6 +589,14 @@
     $("dirty-hint").textContent = "";
     foerderung();
     anfrageLink();
+  }
+
+  // Ordnet die Konfiguration einer der vier Stufen von der Startseite zu.
+  function stufe(r) {
+    var proKarte = r.vram / r.n;
+    if (r.n >= 4) return "Enterprise HA";
+    if (proKarte >= 96) return r.n >= 2 ? "Enterprise" : "Professional";
+    return r.n >= 2 ? "Zwischengröße" : "Kompakt";
   }
 
   function foerderung() {
